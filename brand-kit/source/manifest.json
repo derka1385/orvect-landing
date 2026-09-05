@@ -1,0 +1,210 @@
+[
+  {
+    "name": "concept-01",
+    "width": 1200,
+    "height": 660,
+    "folder": "logos",
+    "description": "ORVECT logo concept 1: Signal / recommended",
+    "type": "svg"
+  },
+  {
+    "name": "concept-02",
+    "width": 1200,
+    "height": 660,
+    "folder": "logos",
+    "description": "ORVECT logo concept 2: Orientation / alternative",
+    "type": "svg"
+  },
+  {
+    "name": "concept-03",
+    "width": 1200,
+    "height": 660,
+    "folder": "logos",
+    "description": "ORVECT logo concept 3: Vector / alternative",
+    "type": "svg"
+  },
+  {
+    "name": "primary-light",
+    "width": 1200,
+    "height": 360,
+    "folder": "logos",
+    "description": "ORVECT primary-light logo",
+    "type": "svg"
+  },
+  {
+    "name": "primary-dark",
+    "width": 1200,
+    "height": 360,
+    "folder": "logos",
+    "description": "ORVECT primary-dark logo",
+    "type": "svg"
+  },
+  {
+    "name": "monochrome-dark",
+    "width": 1200,
+    "height": 360,
+    "folder": "logos",
+    "description": "ORVECT monochrome-dark logo",
+    "type": "svg"
+  },
+  {
+    "name": "monochrome-light",
+    "width": 1200,
+    "height": 360,
+    "folder": "logos",
+    "description": "ORVECT monochrome-light logo",
+    "type": "svg"
+  },
+  {
+    "name": "icon-orange",
+    "width": 512,
+    "height": 512,
+    "folder": "logos",
+    "description": "ORVECT orange symbol, transparent background",
+    "type": "svg"
+  },
+  {
+    "name": "icon-dark",
+    "width": 512,
+    "height": 512,
+    "folder": "logos",
+    "description": "ORVECT dark symbol, transparent background",
+    "type": "svg"
+  },
+  {
+    "name": "icon-light",
+    "width": 512,
+    "height": 512,
+    "folder": "logos",
+    "description": "ORVECT white symbol, transparent background",
+    "type": "svg"
+  },
+  {
+    "name": "primary-transparent",
+    "width": 1200,
+    "height": 360,
+    "folder": "logos",
+    "description": "ORVECT transparent logo",
+    "type": "svg"
+  },
+  {
+    "name": "orvect-brand-guide",
+    "folder": "print",
+    "type": "pdf",
+    "pages": 6,
+    "trim_mm": [
+      210,
+      297
+    ],
+    "bleed_mm": 0,
+    "description": "Orvect Brand Guide"
+  },
+  {
+    "name": "orvect-business-card-85x55-3mm-bleed",
+    "folder": "print",
+    "type": "pdf",
+    "pages": 2,
+    "trim_mm": [
+      85,
+      55
+    ],
+    "bleed_mm": 3,
+    "description": "Orvect Business Card 85X55 3Mm Bleed"
+  },
+  {
+    "name": "orvect-flyer-a5-3mm-bleed",
+    "folder": "print",
+    "type": "pdf",
+    "pages": 2,
+    "trim_mm": [
+      148,
+      210
+    ],
+    "bleed_mm": 3,
+    "description": "Orvect Flyer A5 3Mm Bleed"
+  },
+  {
+    "name": "orvect-onepager-a4-3mm-bleed",
+    "folder": "print",
+    "type": "pdf",
+    "pages": 1,
+    "trim_mm": [
+      210,
+      297
+    ],
+    "bleed_mm": 3,
+    "description": "Orvect Onepager A4 3Mm Bleed"
+  },
+  {
+    "name": "instagram-square-1080x1080",
+    "width": 1080,
+    "height": 1080,
+    "folder": "social",
+    "description": "Instagram launch square / Beyond the fault code",
+    "type": "svg"
+  },
+  {
+    "name": "instagram-portrait-1080x1350",
+    "width": 1080,
+    "height": 1350,
+    "folder": "social",
+    "description": "Instagram portrait / original brand manifesto",
+    "type": "svg"
+  },
+  {
+    "name": "instagram-story-1080x1920",
+    "width": 1080,
+    "height": 1920,
+    "folder": "social",
+    "description": "Instagram story / prototype introduction",
+    "type": "svg"
+  },
+  {
+    "name": "linkedin-personal-banner-1584x396",
+    "width": 1584,
+    "height": 396,
+    "folder": "social",
+    "description": "LinkedIn personal banner / left area reserved for avatar",
+    "type": "svg"
+  },
+  {
+    "name": "linkedin-company-banner-1128x191",
+    "width": 1128,
+    "height": 191,
+    "folder": "social",
+    "description": "LinkedIn company banner",
+    "type": "svg"
+  },
+  {
+    "name": "linkedin-post-1200x627",
+    "width": 1200,
+    "height": 627,
+    "folder": "social",
+    "description": "LinkedIn launch post / early technical prototype",
+    "type": "svg"
+  },
+  {
+    "name": "instagram-carousel-01-1080x1350",
+    "width": 1080,
+    "height": 1350,
+    "folder": "social",
+    "description": "Instagram carousel card 1 of 3",
+    "type": "svg"
+  },
+  {
+    "name": "instagram-carousel-02-1080x1350",
+    "width": 1080,
+    "height": 1350,
+    "folder": "social",
+    "description": "Instagram carousel card 2 of 3",
+    "type": "svg"
+  },
+  {
+    "name": "instagram-carousel-03-1080x1350",
+    "width": 1080,
+    "height": 1350,
+    "folder": "social",
+    "description": "Instagram carousel card 3 of 3",
+    "type": "svg"
+  }
+]
