@@ -59,7 +59,11 @@
     'Open the prototype':'Öppna prototypen'
   });
   fr.Home = 'Accueil';
+  fr['AUTOMOTIVE INTELLIGENCE / THE VISION'] = 'INTELLIGENCE AUTOMOBILE / LA VISION';
+  fr['THE FOUNDER'] = 'LE FONDATEUR';
   sv.Home = 'Hem';
+  sv['AUTOMOTIVE INTELLIGENCE / THE VISION'] = 'FORDONSINTELLIGENS / VISIONEN';
+  sv['THE FOUNDER'] = 'GRUNDAREN';
   const dictionaries = {en:{},fr,sv};
   const originals = new WeakMap();
   const attributeOriginals = new WeakMap();

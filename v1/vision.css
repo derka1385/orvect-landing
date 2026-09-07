@@ -1,0 +1,75 @@
+/* Vision-only refinement: shared pages and the ORVECT palette remain unchanged. */
+.vision-page{--vision-line:rgba(242,241,237,.12);--vision-gap:clamp(40px,6vw,88px)}
+.vision-page .vision{background:linear-gradient(115deg,rgba(242,241,237,.025),transparent 68%),#16191b}
+.vision-page .section-label{border-color:var(--vision-line);font-family:var(--body-font);font-size:11px;line-height:1.5;letter-spacing:.1em;padding-top:18px;margin-bottom:52px}
+.vision-page .page-content>.vision{padding-block:64px 80px;min-height:calc(100svh - 108px)}
+.vision-page .vision-heading,.vision-page .founder-grid{grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:var(--vision-gap);align-items:start}
+.vision-page .vision-heading h1{font-size:clamp(48px,5.25vw,76px);line-height:1.06;letter-spacing:-.055em}
+.vision-page .vision-heading h1 span{color:var(--primitive-alloy)}
+.vision-page .vision-heading .large-copy{font-size:clamp(21px,1.7vw,25px);line-height:1.45;max-width:34ch;margin:0 0 24px}
+.vision-page .vision-heading p:not(.large-copy),.vision-page .founder-grid>div>p:not(.large-copy){font-size:16px;line-height:1.7;max-width:53ch;color:var(--primitive-alloy);margin-block:0 18px}
+.vision-page .brand-list{margin-top:48px;padding-block:28px;border-color:var(--vision-line);gap:24px}
+.vision-page .brand-list li{font-size:17px;line-height:1.4;letter-spacing:-.025em}
+.vision-page .brand-list li:last-child{font-size:13px}
+.vision-page .caveat{font-size:13px;line-height:1.65;max-width:100ch;color:var(--primitive-alloy);margin:18px 0 0}
+/* One continuous direction line; orange identifies only the current stage. */
+.vision-page .roadmap{position:relative;grid-template-columns:repeat(3,minmax(0,1fr));gap:40px;margin-top:64px}
+.vision-page .roadmap::before{content:'';position:absolute;inset:0 0 auto;height:1px;background:var(--vision-line)}
+.vision-page .roadmap article{position:relative;min-width:0;padding-top:25px;border:0}
+.vision-page .roadmap article::before{content:'';position:absolute;left:0;top:-4px;width:8px;height:8px;border:1px solid var(--primitive-alloy);background:#16191b}
+.vision-page .roadmap article.current::before{background:var(--primitive-orange);border-color:var(--primitive-orange)}
+.vision-page .roadmap .mono{font-family:var(--body-font);font-size:11px;font-weight:500;letter-spacing:.1em;color:var(--primitive-alloy)}
+.vision-page .roadmap .current .mono{color:var(--primitive-orange)}
+.vision-page .roadmap h3{font-size:clamp(20px,1.65vw,24px);line-height:1.3;font-weight:500;letter-spacing:-.025em;margin:16px 0 12px;max-width:30ch}
+.vision-page .roadmap p{font-size:15px;line-height:1.65;max-width:38ch;margin:0;color:var(--primitive-alloy)}
+.vision-page .founder{min-height:0;padding-block:72px 80px}
+.vision-page .founder .section-label{margin-bottom:44px}
+.vision-page .founder h2{font-size:clamp(40px,4vw,58px);line-height:1.08}
+.vision-page .founder-role{font-size:13px;margin-top:16px;line-height:1.5}
+.vision-page .founder .large-copy{font-size:24px;line-height:1.4;margin:0 0 24px}
+.vision-page .founder-actions{display:flex;align-items:center;flex-wrap:wrap;gap:16px 24px;margin-top:28px}
+.vision-page .founder-actions .button{min-height:48px;background:var(--primitive-orange);color:var(--primitive-graphite);border-radius:2px;gap:28px}
+.vision-page .founder-actions .button:hover{background:var(--primitive-paper)}
+.vision-page .founder-actions .text-link{margin:0;min-height:48px;font-size:13px;gap:18px;border-color:var(--vision-line)}
+.vision-page footer{border-top:1px solid var(--vision-line);padding-top:32px}
+.vision-page .footer-bottom{font-family:var(--body-font);border-color:var(--vision-line);font-size:10px;letter-spacing:.075em;margin-top:28px;padding-top:22px}
+.vision-page .footer-top p,.vision-page .footer-top>a{line-height:1.65}
+/* Read the page without repeated disappearance / re-entry effects. */
+.vision-page .page-content .reveal{opacity:1!important;transform:none!important}
+.vision-page .nav a,.vision-page .text-link{transition:color .2s,border-color .2s}
+@media(min-width:901px){.vision-page>.nav{position:sticky;top:0;z-index:20;background:var(--primitive-graphite);border-color:var(--vision-line)}.vision-page section{scroll-margin-top:124px}}
+@media(max-width:1100px){
+ .vision-page .roadmap{gap:28px}.vision-page .brand-list{row-gap:22px}
+ .vision-page .section-label{margin-bottom:42px}
+}
+@media(max-width:900px){
+ .vision-page .vision-heading,.vision-page .founder-grid{grid-template-columns:1fr;gap:32px}
+ .vision-page .vision-heading h1{font-size:clamp(42px,6.4vw,58px)}
+ .vision-page .vision-heading>div{max-width:60ch}
+ .vision-page .vision-heading .large-copy{max-width:42ch}
+ .vision-page .vision-heading p:not(.large-copy){max-width:60ch}
+ .vision-page .roadmap{grid-template-columns:1fr;gap:30px;margin-top:44px;padding-left:24px}
+ .vision-page .roadmap::before{inset:5px auto 10px 0;width:1px;height:auto}
+ .vision-page .roadmap article{padding-top:0}
+ .vision-page .roadmap article::before{left:-28px;top:5px}
+ .vision-page .roadmap h3{max-width:none;margin-top:10px}
+ .vision-page .roadmap p{max-width:55ch}
+ .vision-page .founder{padding-block:56px 64px}
+}
+@media(max-width:760px){
+ .vision-page .page-content>.vision{padding-block:36px 56px;min-height:0}
+ .vision-page .section-label{font-size:10px;margin-bottom:36px;padding-top:16px}
+ .vision-page .vision-heading h1{font-size:clamp(38px,9.5vw,48px);line-height:1.08}
+ .vision-page .vision-heading .large-copy{font-size:21px;margin-bottom:20px}
+ .vision-page .vision-heading p:not(.large-copy){font-size:15px;line-height:1.7;margin-bottom:0}
+ .vision-page .brand-list{margin-top:32px;padding-block:24px;gap:22px 20px}
+ .vision-page .brand-list li{font-size:16px}.vision-page .brand-list li:last-child{font-size:12px}
+ .vision-page .caveat{font-size:12px;line-height:1.7;margin-top:16px}
+ .vision-page .founder .section-label{margin-bottom:32px}
+ .vision-page .founder .large-copy{font-size:22px}
+ .vision-page .founder-grid>div>p:not(.large-copy){font-size:15px;line-height:1.7}
+ .vision-page .founder-actions{align-items:flex-start;flex-direction:column;gap:12px;margin-top:24px}
+ .vision-page .founder-actions .button{justify-content:space-between;width:100%}
+ .vision-page .footer-top{gap:18px}
+}
+@media(prefers-reduced-motion:reduce){.vision-page *{scroll-behavior:auto!important;transition:none!important}}
