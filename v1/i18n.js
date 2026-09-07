@@ -58,6 +58,8 @@
     'ORVECT prototype interface':'ORVECT-prototypens gränssnitt','Actual ORVECT interface. Prototype preview, not a live diagnostic session.':'ORVECTs faktiska gränssnitt. Prototypförhandsvisning, inte en pågående diagnostiksession.',
     'Open the prototype':'Öppna prototypen'
   });
+  fr.Home = 'Accueil';
+  sv.Home = 'Hem';
   const dictionaries = {en:{},fr,sv};
   const originals = new WeakMap();
   const attributeOriginals = new WeakMap();
@@ -92,9 +94,11 @@
     document.documentElement.lang = language;
     selector.value = language;
     translate(document.body, dictionary);
-    document.title = metadata[0];
+    const currentPage = document.querySelector('.nav nav [aria-current="page"]');
+    const pageTitle = currentPage?.getAttribute('href') !== 'index.html' ? `ORVECT — ${currentPage.textContent}` : metadata[0];
+    document.title = pageTitle;
     document.querySelector('meta[name="description"]')?.setAttribute('content', metadata[1]);
-    document.querySelector('meta[property="og:title"]')?.setAttribute('content', metadata[0]);
+    document.querySelector('meta[property="og:title"]')?.setAttribute('content', pageTitle);
     document.querySelector('meta[property="og:description"]')?.setAttribute('content', metadata[2]);
     localStorage.setItem('orvect-landing-language', language);
   }

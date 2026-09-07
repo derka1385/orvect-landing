@@ -69,8 +69,6 @@ function update(){
  section.style.setProperty('--sequence-progress',progress);
  section.style.setProperty('--word-turn',`${progress*-8}deg`);
  document.querySelector('.hero').style.setProperty('--hero-tilt',`${Math.min(scrollY/80,10)}deg`);
- const frame=document.querySelector('.product-frame'), fr=frame.getBoundingClientRect();
- frame.style.setProperty('--screen-tilt',`${Math.max(0,Math.min(9,(fr.top/innerHeight)*9))}deg`);
  if(visible)render();
 }
 const schedule=()=>{if(!raf)raf=requestAnimationFrame(update)};
