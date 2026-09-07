@@ -1,0 +1,51 @@
+/* Immersive product sequences; graphite / mineral / signal orange. */
+.hero{min-height:calc(100svh - 108px);perspective:1200px}
+.hero h1{transform:rotateX(var(--hero-tilt,0deg));transform-origin:50% 90%;will-change:transform}
+.blueprint-sequence{height:220svh;position:relative;border-block:1px solid var(--line)}
+.blueprint-stage{position:sticky;top:0;height:100svh;min-height:650px;overflow:hidden;background:#101214}
+.blueprint-stage::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 65% 55%,#252c2f80,transparent 65%);pointer-events:none}
+.blueprint-top{position:absolute;top:42px;left:var(--gutter);right:var(--gutter);display:flex;justify-content:space-between;align-items:center;gap:20px;z-index:2}
+.experience-toggle{border:1px solid #ffffff35;background:#101214;color:var(--fg);font:11px var(--body-font);padding:10px 14px;min-height:44px;cursor:pointer}
+.experience-toggle:hover{border-color:var(--accent)}
+.blueprint-copy{position:absolute;left:var(--gutter);top:21%;z-index:2;pointer-events:none;max-width:650px;perspective:1000px}
+.blueprint-copy h2{font-size:clamp(56px,6.8vw,110px);line-height:.96;letter-spacing:-.065em;transform:rotateY(var(--word-turn,0deg));transform-origin:left center}
+.blueprint-copy h2 em{font-style:normal;color:var(--accent)}
+.blueprint-copy p{max-width:310px;font-size:14px;line-height:1.6;color:var(--muted);margin-top:28px}
+.vehicle-canvas{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+.blueprint-footer{position:absolute;bottom:38px;left:var(--gutter);right:var(--gutter);display:flex;justify-content:space-between;align-items:end;gap:24px;z-index:2}
+.blueprint-readout{display:flex;gap:32px;color:var(--muted);font:11px var(--mono-font)}
+.blueprint-readout span{display:grid;gap:8px}.blueprint-readout b{font-weight:500;color:var(--accent)}
+.sequence-progress{width:160px;height:2px;background:#ffffff25;overflow:hidden}.sequence-progress i{display:block;width:100%;height:100%;background:var(--accent);transform:scaleX(var(--sequence-progress,0));transform-origin:left}
+.signal-experience{min-height:100svh;position:relative;display:flex;flex-direction:column;justify-content:center;text-align:center;overflow:hidden;background:var(--fg);color:var(--bg);padding:100px var(--gutter)}
+.signal-experience .eyebrow{color:#62676c}
+.signal-experience h2{font-size:clamp(48px,7.4vw,120px);line-height:1;letter-spacing:-.065em;position:relative;z-index:1}
+.signal-experience h2 em{font-style:normal;color:var(--accent)}
+.signal-experience>p:last-child{max-width:490px;margin:32px auto 0;color:#62676c;font-size:16px;line-height:1.6}
+.voice-wave{height:170px;display:flex;align-items:center;justify-content:center;gap:5px;margin:34px -40px;mask-image:linear-gradient(90deg,transparent,#000 18%,#000 82%,transparent)}
+.voice-wave i{display:block;width:3px;flex:0 0 3px;height:var(--bar-height);border-radius:3px;background:var(--accent);opacity:var(--bar-opacity);transform:scaleY(.32);animation:signal-breathe var(--bar-duration) ease-in-out infinite alternate;animation-delay:var(--bar-delay)}
+@keyframes signal-breathe{to{transform:scaleY(1)}}
+.signal-experience:not(.in-view) .voice-wave i,.motion-paused .voice-wave i{animation-play-state:paused}
+.product{overflow:hidden;perspective:1500px}
+.product-heading{align-items:end}
+.product-frame{transform:perspective(1600px) rotateX(var(--screen-tilt,0deg));transform-origin:center 70%;box-shadow:0 45px 100px #0005;will-change:transform}
+.product-frame img{display:block;width:100%;height:auto}
+.product-frame figcaption{font-size:12px;line-height:1.6}
+.product-switch{display:flex;gap:8px;flex-wrap:wrap;margin:28px 0 24px}
+.product-switch button{min-height:46px;padding:12px 20px;border:1px solid #62676c;background:transparent;color:#62676c;font:13px var(--body-font)}
+.product-switch button[aria-pressed=true]{background:var(--accent);border-color:var(--accent);color:var(--bg)}
+.product-open{display:inline-flex;align-items:center;gap:25px;margin-top:20px;min-height:44px;border-bottom:1px solid var(--accent);font-size:14px}
+.reveal{transition:opacity .75s,transform .9s cubic-bezier(.2,.7,.2,1)}
+.motion-ready .reveal:not(.in-view){opacity:0;transform:translateY(35px) rotateX(5deg)}
+@media(min-width:1100px){.product .wrap{max-width:1520px}.product-heading{grid-template-columns:1.3fr 1fr}.product-heading h2{font-size:clamp(58px,5vw,84px)}}
+@media(max-width:760px){
+ .blueprint-sequence{height:170svh}.blueprint-stage{min-height:680px}
+ .blueprint-top{top:25px;gap:12px}.blueprint-top .mono{font-size:9px;max-width:145px}
+ .blueprint-copy{top:16%;right:var(--gutter)}.blueprint-copy h2{font-size:clamp(48px,10vw,76px)}.blueprint-copy p{font-size:13px;max-width:260px;margin-top:20px}
+ .blueprint-footer{bottom:24px;align-items:start;flex-direction:column;gap:20px}.blueprint-readout{gap:20px;font-size:9px}.sequence-progress{width:100%}
+ .signal-experience{min-height:85svh;padding-block:80px}.voice-wave{height:130px;gap:4px}.signal-experience>p:last-child{font-size:14px}
+ .product-frame{margin-inline:0}.product-switch button{flex:1;padding-inline:12px}.product-heading h2{font-size:48px}
+}
+@media(prefers-reduced-motion:reduce){
+ .blueprint-sequence{height:auto}.blueprint-stage{position:relative;height:100svh}
+ .voice-wave i{animation:none;transform:scaleY(.7)}.hero h1,.blueprint-copy h2,.product-frame,.motion-ready .reveal{transform:none!important;opacity:1!important}
+}

@@ -28,6 +28,36 @@
     'INVESTORS. WORKSHOPS. DATA PROVIDERS.':'INVESTERARE. VERKSTÄDER. DATALEVERANTÖRER.',"Let's move":'Låt oss föra','diagnostics':'diagnostiken','forward.':'framåt.','Challenge the thesis.':'Utmana tesen.','Help shape what comes next.':'Var med och forma nästa steg.','Start a conversation':'Starta en dialog','Automotive intelligence.':'Fordonsintelligens.','Grounded in evidence.':'Grundad i bevis.','© 2026 NOLANN PETRI / ORVECT BRAND CONCEPT':'© 2026 NOLANN PETRI / ORVECT VARUMÄRKESKONCEPT','PUBLIC PROTOTYPE PREVIEW':'OFFENTLIG FÖRHANDSVISNING AV PROTOTYP','BACK TO TOP ↑':'TILLBAKA TILL TOPPEN ↑'
   };
 
+  Object.assign(fr, {
+    'ORVECT / VEHICLE INTELLIGENCE':'ORVECT / INTELLIGENCE AUTOMOBILE', 'Pause effects':'Suspendre les effets', 'Resume effects':'Reprendre les effets',
+    'LOOK BENEATH THE SURFACE':'VOIR AU-DELÀ DES APPARENCES', 'Every signal.':'Chaque signal.', 'A bigger picture.':'Une vue d’ensemble.',
+    'Explore the connections between the vehicle, its systems and the evidence.':'Explorez les liens entre le véhicule, ses systèmes et les preuves.',
+    '01 / CONTEXT':'01 / CONTEXTE','02 / EVIDENCE':'02 / PREUVES','03 / CLARITY':'03 / CLARTÉ',
+    'Vehicle configuration':'Configuration véhicule','Connected signals':'Signaux reliés','Human judgement':'Jugement humain',
+    'CONCEPT VISUALISATION · SCROLL TO EXPLORE':'VISUALISATION CONCEPTUELLE · DÉFILER POUR EXPLORER',
+    'FROM COMPLEXITY TO CLARITY':'DE LA COMPLEXITÉ À LA CLARTÉ','Give the signals':'Donner aux signaux','a clear meaning.':'un sens clair.',
+    'A visual rhythm for intelligence in motion. Always grounded in the evidence you provide.':'Un rythme visuel pour une intelligence en mouvement. Toujours ancrée dans les preuves que vous apportez.',
+    'The intelligence.':'L’intelligence.','The workspace.':'L’espace de travail.',
+    'Discover the diagnostic workspace and the workshop cases that help structure its knowledge.':'Découvrez l’espace de diagnostic et les cas atelier qui contribuent à structurer ses connaissances.',
+    'Product previews':'Aperçus du produit','Diagnostic workspace':'Espace diagnostic','Workshop knowledge':'Savoir atelier',
+    'ORVECT prototype interface':'Interface du prototype ORVECT','Actual ORVECT interface. Prototype preview, not a live diagnostic session.':'Interface réelle ORVECT. Aperçu du prototype, pas une session de diagnostic en direct.',
+    'Open the prototype':'Ouvrir le prototype'
+  });
+  Object.assign(sv, {
+    'ORVECT / VEHICLE INTELLIGENCE':'ORVECT / FORDONSINTELLIGENS','Pause effects':'Pausa effekter','Resume effects':'Återuppta effekter',
+    'LOOK BENEATH THE SURFACE':'SE UNDER YTAN','Every signal.':'Varje signal.','A bigger picture.':'En större helhet.',
+    'Explore the connections between the vehicle, its systems and the evidence.':'Utforska sambanden mellan fordonet, dess system och bevisen.',
+    '01 / CONTEXT':'01 / SAMMANHANG','02 / EVIDENCE':'02 / BEVIS','03 / CLARITY':'03 / TYDLIGHET',
+    'Vehicle configuration':'Fordonskonfiguration','Connected signals':'Sammankopplade signaler','Human judgement':'Mänskligt omdöme',
+    'CONCEPT VISUALISATION · SCROLL TO EXPLORE':'KONCEPTVISUALISERING · SKROLLA FÖR ATT UTFORSKA',
+    'FROM COMPLEXITY TO CLARITY':'FRÅN KOMPLEXITET TILL TYDLIGHET','Give the signals':'Ge signalerna','a clear meaning.':'en tydlig mening.',
+    'A visual rhythm for intelligence in motion. Always grounded in the evidence you provide.':'En visuell rytm för intelligens i rörelse. Alltid grundad i bevisen du tillför.',
+    'The intelligence.':'Intelligensen.','The workspace.':'Arbetsytan.',
+    'Discover the diagnostic workspace and the workshop cases that help structure its knowledge.':'Upptäck diagnostikens arbetsyta och verkstadsfallen som hjälper till att strukturera kunskapen.',
+    'Product previews':'Produktförhandsvisningar','Diagnostic workspace':'Diagnostikens arbetsyta','Workshop knowledge':'Verkstadskunskap',
+    'ORVECT prototype interface':'ORVECT-prototypens gränssnitt','Actual ORVECT interface. Prototype preview, not a live diagnostic session.':'ORVECTs faktiska gränssnitt. Prototypförhandsvisning, inte en pågående diagnostiksession.',
+    'Open the prototype':'Öppna prototypen'
+  });
   const dictionaries = {en:{},fr,sv};
   const originals = new WeakMap();
   const attributeOriginals = new WeakMap();
