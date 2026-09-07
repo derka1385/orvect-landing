@@ -1,4 +1,8 @@
 /* Immersive product sequences; graphite / mineral / signal orange. */
+:root{--gutter:clamp(20px,2.2vw,42px)}
+.wrap,.product .wrap{max-width:none}
+.hero-art .core-scene{right:0}
+@media(min-width:761px){.section{min-height:100svh}}
 .hero{min-height:calc(100svh - 108px);perspective:1200px}
 .hero h1{transform:rotateX(var(--hero-tilt,0deg));transform-origin:50% 90%;will-change:transform}
 .blueprint-sequence{height:220svh;position:relative;border-block:1px solid var(--line)}
@@ -36,7 +40,7 @@
 .product-open{display:inline-flex;align-items:center;gap:25px;margin-top:20px;min-height:44px;border-bottom:1px solid var(--accent);font-size:14px}
 .reveal{transition:opacity .75s,transform .9s cubic-bezier(.2,.7,.2,1)}
 .motion-ready .reveal:not(.in-view){opacity:0;transform:translateY(35px) rotateX(5deg)}
-@media(min-width:1100px){.product .wrap{max-width:1520px}.product-heading{grid-template-columns:1.3fr 1fr}.product-heading h2{font-size:clamp(58px,5vw,84px)}}
+@media(min-width:1100px){.product-heading{grid-template-columns:1.3fr 1fr}.product-heading h2{font-size:clamp(58px,5vw,84px)}}
 @media(max-width:760px){
  .blueprint-sequence{height:170svh}.blueprint-stage{min-height:680px}
  .blueprint-top{top:25px;gap:12px}.blueprint-top .mono{font-size:9px;max-width:145px}
