@@ -12,4 +12,10 @@
 .nav nav,.button,.text-link,.scene-controls button,.footer-top p,.footer-top>a:not(.brand),.founder-role{font-size:.875rem}
 .caveat{font-size:.8125rem}.hero-baseline,.footer-bottom,.scene-header{flex-wrap:wrap}.scene-caption{max-width:100%}.scene-controls label{flex-basis:100%}.scene-controls{bottom:52px}.scene-controls input{flex:1}.scene-caption{bottom:7px}.window-bar{flex-wrap:wrap}.hero-art{min-height:540px}
 @media(max-width:760px){.hero-art{min-height:480px}.hero .eyebrow,.contact .eyebrow{font-size:.75rem}.hero-baseline a{margin-left:0}.scene-controls{bottom:42px}.scene-caption{bottom:0}.scene-header{gap:8px}.scene-header span:last-child{display:none}.footer-top>a:not(.brand){overflow-wrap:anywhere}.product-note p{font-size:.875rem}.contact h2 em{color:var(--bg)}}
+.nav .language-control{position:relative;display:block;width:auto;min-height:0;border:0;flex:0 0 auto}
+.nav .language-control select{appearance:none;-webkit-appearance:none;width:132px;min-height:44px;padding:10px 36px 10px 16px;border:1px solid #ffffff26;border-radius:4px;background:#ffffff06;color:var(--fg);font-size:13px;font-weight:500;letter-spacing:0;cursor:pointer;transition:border-color .18s,background .18s}
+.nav .language-control select:hover{border-color:var(--accent);background:#ffffff0d}
+.nav .language-control select:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.nav .language-control .language-chevron{position:absolute;right:13px;top:14px;width:16px;height:16px;pointer-events:none;stroke:var(--accent);stroke-width:1.5}
+.nav .language-control option{background:var(--bg);color:var(--fg)}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition:none!important;animation:none!important}}
