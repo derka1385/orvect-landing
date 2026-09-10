@@ -18,4 +18,18 @@
 .nav .language-control select:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
 .nav .language-control .language-chevron{position:absolute;right:13px;top:14px;width:16px;height:16px;pointer-events:none;stroke:var(--accent);stroke-width:1.5}
 .nav .language-control option{background:var(--bg);color:var(--fg)}
+.proof-counter{padding-bottom:clamp(64px,7vw,112px)}
+.proof-counter-frame{border-block:1px solid var(--line);padding-block:28px 34px}
+.proof-counter-heading,.proof-counter-body{display:grid;grid-template-columns:minmax(210px,.72fr) minmax(0,1.28fr);gap:clamp(32px,7vw,120px)}
+.proof-counter-heading{align-items:start;color:var(--muted)}
+.proof-counter-heading .eyebrow{margin:0;color:var(--fg)}
+.proof-counter-heading .mono{margin:0;text-align:right}
+.proof-counter-body{align-items:end;margin-top:34px}
+.proof-counter-reading{display:flex;align-items:baseline;gap:18px;margin:0;min-width:0}
+.proof-counter-reading strong{color:var(--accent);font-size:clamp(72px,9vw,144px);font-weight:500;letter-spacing:-.075em;line-height:.78;font-variant-numeric:tabular-nums}
+.proof-counter-reading span{max-width:150px;font-family:var(--mono-font);font-size:.75rem;font-weight:600;letter-spacing:.09em;line-height:1.45}
+.proof-counter-copy{margin:0;color:var(--fg);font-size:clamp(18px,1.7vw,25px);letter-spacing:-.025em;line-height:1.45}
+.proof-counter-copy span{color:var(--muted)}
+.proof-counter[data-state="unavailable"] .proof-counter-reading strong{color:var(--muted)}
+@media(max-width:760px){.proof-counter{padding-top:34px;padding-bottom:64px}.proof-counter-frame{padding-block:22px 28px}.proof-counter-heading,.proof-counter-body{grid-template-columns:1fr;gap:18px}.proof-counter-heading .mono{text-align:left}.proof-counter-body{margin-top:42px;gap:27px}.proof-counter-reading{gap:14px}.proof-counter-reading strong{font-size:clamp(68px,24vw,106px)}.proof-counter-reading span{max-width:130px;font-size:.6875rem}.proof-counter-copy{font-size:17px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition:none!important;animation:none!important}}
