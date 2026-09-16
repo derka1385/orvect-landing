@@ -100,6 +100,11 @@
     'Companies and workshops can apply to the beta. Private individuals can contact us by email.':'Les entreprises et ateliers peuvent s’inscrire à la bêta. Les particuliers peuvent nous contacter par e-mail.',
     'For French companies only. 14 digits, if provided.':'Pour les entreprises françaises uniquement. 14 chiffres, si renseigné.'
   });
+  Object.assign(fr, {'Page chapters':'Chapitres de la page','CONTEXT.':'CONTEXTE.','EVIDENCE.':'PREUVES.','CLARITY.':'CLARTÉ.','NOW.':'AUJOURD’HUI.','NEXT.':'ENSUITE.','THEN.':'DEMAIN.'});
+  Object.assign(sv, {'Page chapters':'Sidans kapitel','CONTEXT.':'KONTEXT.','EVIDENCE.':'BEVIS.','CLARITY.':'TYDLIGHET.','NOW.':'NU.','NEXT.':'NÄSTA.','THEN.':'SEDAN.'});
+  Object.assign(de, {'Page chapters':'Seitenkapitel','CONTEXT.':'KONTEXT.','EVIDENCE.':'NACHWEISE.','CLARITY.':'KLARHEIT.','NOW.':'HEUTE.','NEXT.':'DANACH.','THEN.':'MORGEN.'});
+  Object.assign(sv, {'CONTEXT':'KONTEXT','EVIDENCE':'BEVIS','Beta program':'Betaprogram','Join the beta':'Anmäl dig till betan','Sign up for the beta':'Anmäl dig till betan','BETA / APPLICATION':'BETA / ANSÖKAN','Help shape the next step.':'Var med och forma nästa steg.','Companies and workshops can apply to the beta. Private individuals can contact us by email.':'Företag och verkstäder kan ansöka till betan. Privatpersoner kan kontakta oss via e-post.'});
+  Object.assign(de, {'CONTEXT':'KONTEXT','EVIDENCE':'NACHWEISE','Beta program':'Betaprogramm','Join the beta':'Zur Beta anmelden','Sign up for the beta':'Zur Beta anmelden','BETA / APPLICATION':'BETA / BEWERBUNG','Help shape the next step.':'Gestalte den nächsten Schritt mit.','Companies and workshops can apply to the beta. Private individuals can contact us by email.':'Unternehmen und Werkstätten können sich für die Beta anmelden. Privatpersonen können uns per E-Mail kontaktieren.'});
   const dictionaries = {en:{},fr,sv,de};
   const originals = new WeakMap();
   const attributeOriginals = new WeakMap();
