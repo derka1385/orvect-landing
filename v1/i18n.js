@@ -90,6 +90,16 @@
     'LIVE PRODUCT SIGNAL':'LIVE-PRODUKTSIGNAL','GLOBAL / ALL DEVICES':'GLOBAL / ALLE GERÄTE','DIAGNOSTICS ANALYZED':'ANALYSIERTE DIAGNOSEN',
     'Counted after the first successful analysis of each diagnostic.':'Jede Diagnose wird nach ihrer ersten erfolgreichen Analyse gezählt.','Shared across every device and workshop account.':'Der Zähler gilt für alle Geräte und Werkstattkonten.','Live diagnostic count temporarily unavailable.':'Der Diagnosezähler ist vorübergehend nicht verfügbar.'
   });
+  Object.assign(fr, {
+    'Beta program':'Programme bêta','Join the beta':'Rejoindre la bêta','ORVECT / EARLY ACCESS':'ORVECT / ACCÈS ANTICIPÉ','INTEREST / 01':'INTÉRÊT / 01','OPEN':'OUVERT','Join the':'Rejoindre le','beta programme.':'programme bêta.','We are looking for companies and workshops ready to challenge the next stage of diagnostic reasoning.':'Nous recherchons des entreprises et des ateliers prêts à participer à la prochaine étape du raisonnement diagnostic.','CONTEXT':'CONTEXTE','EVIDENCE':'PREUVES','CLARITY':'CLARTÉ','BETA / APPLICATION':'BÊTA / INSCRIPTION','Start with':'Partir de','your context.':'votre contexte.','Tell us who you are and what you would like to explore. The beta is intended for organisations; private individuals can contact us directly by email.':'Dites-nous qui vous êtes et ce que vous souhaitez explorer. La bêta est destinée aux organisations ; les particuliers peuvent nous contacter directement par e-mail.','REGISTRATION / 01—02':'INSCRIPTION / 01—02','Fields marked with':'Les champs marqués d’un','are required.':'sont obligatoires.','What best describes you?':'Quel profil vous correspond le mieux ?','Company or workshop':'Entreprise ou atelier','I represent an organisation.':'Je représente une organisation.','Private individual':'Particulier','I would like to get in touch personally.':'Je souhaite prendre contact à titre personnel.','Full name':'Nom complet','Email address':'Adresse e-mail','Company name':'Nom de l’entreprise','SIRET number':'Numéro de SIRET','optional':'facultatif','For French companies only.':'Pour les entreprises françaises uniquement.','What brings you to the beta?':'Pourquoi souhaitez-vous rejoindre la bêta ?','Your workshop, diagnostic needs or the opportunity you would like to explore.':'Votre atelier, vos besoins de diagnostic ou l’opportunité que vous souhaitez explorer.','How did you hear about ORVECT?':'Comment avez-vous connu ORVECT ?','Select an option':'Sélectionnez une option','Word of mouth':'Bouche-à-oreille','Event or workshop':'Événement ou atelier','Search engine':'Moteur de recherche','Other':'Autre','Your email app will open with this application pre-filled. Nothing is sent directly from this website.':'Votre application e-mail s’ouvrira avec cette candidature préremplie. Rien n’est envoyé directement depuis le site.','Prepare my application':'Préparer ma candidature','PRIVATE INDIVIDUAL / DIRECT CONTACT':'PARTICULIER / CONTACT DIRECT','Let’s start a conversation.':'Échangeons.','The beta registration is reserved for companies and workshops. Send us a few lines about why ORVECT interests you and we’ll get back to you.':'L’inscription bêta est réservée aux entreprises et aux ateliers. Envoyez-nous quelques lignes sur votre intérêt pour ORVECT et nous vous répondrons.','Contact ORVECT by email':'Contacter ORVECT par e-mail'
+  });
+  Object.assign(fr, {
+    'Join the beta':"S’inscrire à la bêta",
+    'Sign up for the beta':"S’inscrire à la bêta",
+    'Help shape the next step.':'Participez à la prochaine étape.',
+    'Companies and workshops can apply to the beta. Private individuals can contact us by email.':'Les entreprises et ateliers peuvent s’inscrire à la bêta. Les particuliers peuvent nous contacter par e-mail.',
+    'For French companies only. 14 digits, if provided.':'Pour les entreprises françaises uniquement. 14 chiffres, si renseigné.'
+  });
   const dictionaries = {en:{},fr,sv,de};
   const originals = new WeakMap();
   const attributeOriginals = new WeakMap();
@@ -103,7 +113,7 @@
       return;
     }
     if (!(node instanceof Element) || node.matches('script,style')) return;
-    ['aria-label','alt'].forEach(attribute => {
+    ['aria-label','alt','placeholder'].forEach(attribute => {
       if (!node.hasAttribute(attribute)) return;
       let saved = attributeOriginals.get(node);
       if (!saved) { saved = {}; attributeOriginals.set(node, saved); }
