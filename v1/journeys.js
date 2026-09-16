@@ -7,6 +7,9 @@
   const chapters = links.map(link => document.querySelector(link.getAttribute('href')));
   const layer = document.querySelector('.layer-sculpture');
   const horizon = document.querySelector('.horizon-sculpture');
+  const header = document.querySelector('body > .nav');
+  const dial = document.querySelector('.precision-dial');
+  const principles = document.querySelector('#principles');
   let pending = false;
   function update() {
     pending = false;
@@ -15,8 +18,11 @@
     const positions = chapters.map(section => section?.getBoundingClientRect().top ?? Infinity);
     const layerRect = layer?.getBoundingClientRect();
     const horizonRect = horizon?.getBoundingClientRect();
+    const principlesRect = principles?.getBoundingClientRect();
+    const headerHeight = header?.getBoundingClientRect().height || 108;
     const clamp = value => Math.max(0, Math.min(1, value));
     nav.style.setProperty('--read-progress', String(progress));
+    document.body.style.setProperty('--header-height', `${headerHeight}px`);
     let active = 0;
     positions.forEach((top, index) => { if (top < innerHeight * .45) active = index; });
     links.forEach((link, index) => {
@@ -30,8 +36,12 @@
     }
     if (horizon) {
       const turn = reduced.matches ? 0 : clamp((innerHeight - horizonRect.top) / (innerHeight + horizonRect.height));
-      horizon.style.setProperty('--orbit-turn', `${turn * 150}deg`);
-      horizon.style.setProperty('--orbit-tilt', `${turn * 65}deg`);
+      horizon.style.setProperty('--frame-shift', `${(1 - turn) * 70}px`);
+    }
+    if (dial && principlesRect) {
+      const progress = reduced.matches ? 0 : clamp((innerHeight * .65 - principlesRect.top) / Math.max(1, principlesRect.height - innerHeight * .35));
+      dial.style.setProperty('--dial-turn', `${progress * 180}deg`);
+      dial.style.setProperty('--dial-inner', `${progress * -270}deg`);
     }
   }
   function schedule() { if (!pending) { pending = true; requestAnimationFrame(update); } }
@@ -39,6 +49,7 @@
   addEventListener('resize', schedule);
   addEventListener('load', schedule);
   reduced.addEventListener('change', schedule);
+  if (header && typeof ResizeObserver !== 'undefined') new ResizeObserver(schedule).observe(header);
   document.querySelector('[data-language]')?.addEventListener('change', schedule);
   schedule();
 })();
