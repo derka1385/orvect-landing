@@ -55,18 +55,22 @@ if (proof && diagnosticCounter) {
       return response.json();
     })
     .then(metrics => {
-      const count = Number(metrics.diagnostics_analyzed);
+      const count = metrics.diagnostics_analyzed;
       if (!Number.isSafeInteger(count) || count < 0) throw new Error('Invalid diagnostics count');
-      diagnosticsCount = count;
+      // Pre-counter workshop diagnostics confirmed by the founder, not API events.
+      const historical = Number(diagnosticCounter.dataset.historicalCount);
+      diagnosticsCount = count + historical;
+      if (!Number.isSafeInteger(diagnosticsCount)) throw new Error('Invalid total');
       animateCount();
       proof.dataset.state = 'ready';
     })
     .catch(() => {
-      diagnosticCounter.textContent = '—';
+      diagnosticsCount = Number(diagnosticCounter.dataset.historicalCount);
+      finishCount();
       reading?.setAttribute('aria-busy','false');
-      proof.dataset.state = 'unavailable';
+      proof.dataset.state = 'historical';
       const copy = proof.querySelector('.proof-counter-copy');
-      if (copy) copy.textContent = 'Live diagnostic count temporarily unavailable.';
+      if (copy) copy.replaceChildren(document.createTextNode('12 historical workshop diagnostics. Live tracking temporarily unavailable.'));
     });
 
   let proofFrame = 0;
