@@ -99,11 +99,17 @@
 .journey-page .roadmap h3{font-size:clamp(32px,3.4vw,52px);max-width:16ch;margin:24px 0;line-height:1.12}
 .journey-page .roadmap p{font-size:17px;max-width:40ch}
 .journey-page .founder{min-height:95svh;padding-block:var(--journey-space);background:#191c1f}
-.journey-page .founder-grid{position:relative;grid-template-columns:1fr 1fr;gap:10%}
 .journey-page .founder h2{font-size:clamp(50px,6.5vw,100px)}
 .founder-coordinate{grid-column:1/-1;font-size:clamp(44px,8vw,120px);line-height:1.1;letter-spacing:-.06em;color:#92979b;padding-bottom:60px;border-bottom:1px solid var(--line);margin-bottom:48px}
 .founder-coordinate span{display:block;font-size:11px;letter-spacing:.2em;margin-top:22px;color:var(--accent)}
 .journey-page .founder .large-copy{font-size:clamp(26px,2.5vw,38px)}
+.team-grid{display:grid;grid-template-columns:1fr 1fr;gap:0 7%}
+.team-profile{min-width:0;padding:36px 0;border-top:1px solid var(--line)}
+.team-profile-technical{margin-top:clamp(60px,8vw,120px)}
+.team-index{color:var(--accent);margin:0 0 28px}
+.team-profile h2{font-size:clamp(42px,5vw,76px)!important}
+.team-profile h2 .founder-role{font-size:13px;line-height:1.5;letter-spacing:.04em;max-width:34ch}
+.team-profile>p:not(.large-copy,.team-index){font-size:16px;line-height:1.7;max-width:55ch;color:var(--primitive-alloy)}
 .journey-page .reveal{opacity:1!important;transform:none!important}
 @media(max-width:900px){
  .journey-page .intro-grid,.journey-page .vision-heading{grid-template-columns:1fr;gap:36px}
@@ -115,7 +121,7 @@
  .journey-page .principle-chapter,.journey-page .architecture-grid,.journey-page .roadmap-chapter{gap:6%}
  .journey-page .page-content h1{font-size:clamp(62px,9vw,94px)}
  .journey-page .chapter-heading h2{font-size:clamp(32px,5.3vw,54px)}
- .journey-page .founder-grid{grid-template-columns:1fr;gap:32px}
+ .team-grid{grid-template-columns:1fr;gap:32px}.team-profile-technical{margin-top:24px}
 }
 @media(max-width:600px){
  .journey-page .page-content h1{font-size:clamp(48px,11vw,66px)}
@@ -148,6 +154,7 @@
  .journey-page .journey-finale h2{font-size:clamp(54px,12vw,76px)}
  .journey-page h2{font-size:clamp(42px,10vw,64px)}
  .journey-page .founder h2{font-size:54px}
+ .team-profile h2{font-size:46px!important}.team-profile h2 .founder-role{font-size:12px}
 }
 @media(prefers-reduced-motion:reduce){.journey-page *{scroll-behavior:auto!important;transition:none!important}.chapter-heading,.roadmap-intro,.journey-page .architecture-grid>div:first-child{position:static}}
 @media(max-width:760px){.journey-page{--header-height:125px}}
