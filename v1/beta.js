@@ -51,7 +51,7 @@
       value('reason')
     ];
     const subject = 'ORVECT — Beta programme application';
-    window.location.href = `mailto:derka1385@yahoo.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(lines.join('\n'))}`;
+    window.location.href = `mailto:nolann.orvect@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(lines.join('\n'))}`;
     status.textContent = document.documentElement.lang === 'fr' ? 'Votre application e-mail devrait maintenant être ouverte avec votre candidature prête à envoyer.' : 'Your email app should now be open with your application ready to send.';
   });
 })();
