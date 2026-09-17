@@ -114,6 +114,50 @@
   Object.assign(fr, {'01 / FOUNDER & CEO':'01 / FONDATEUR & CEO','Founder & CEO / ORVECT':'Fondateur & CEO / ORVECT','Product direction.':'Direction produit.','European ambition.':'Ambition européenne.','Founder & CEO of ORVECT. BSc student in Business & Economics at the Stockholm School of Economics.':'Fondateur et CEO d’ORVECT. Étudiant en Bachelor of Science in Business & Economics à la Stockholm School of Economics.','Leads product development and project management, head of international relations, partnerships, corporate strategy and European expansion, while overseeing relationships with automotive brands and workshop networks.':'Dirige le développement produit et la gestion de projet, les relations internationales, les partenariats, la stratégie d’entreprise et l’expansion européenne, tout en supervisant les relations avec les marques automobiles et les réseaux d’ateliers.','Contact for technical vehicle enquiries.':'Contact pour les sujets techniques liés aux véhicules.'});
   Object.assign(sv, {'01 / FOUNDER & CEO':'01 / GRUNDARE & VD','Founder & CEO / ORVECT':'Grundare & VD / ORVECT','Product direction.':'Produktledning.','European ambition.':'Europeisk ambition.','Founder & CEO of ORVECT. BSc student in Business & Economics at the Stockholm School of Economics.':'Grundare och VD för ORVECT. Kandidatstudent i Business & Economics vid Handelshögskolan i Stockholm.','Leads product development and project management, head of international relations, partnerships, corporate strategy and European expansion, while overseeing relationships with automotive brands and workshop networks.':'Leder produktutveckling och projektledning, internationella relationer, partnerskap, företagsstrategi och europeisk expansion samt ansvarar för relationer med fordonsmärken och verkstadsnätverk.','Contact for technical vehicle enquiries.':'Kontakt för tekniska frågor om fordon.'});
   Object.assign(de, {'01 / FOUNDER & CEO':'01 / GRÜNDER & CEO','Founder & CEO / ORVECT':'Gründer & CEO / ORVECT','Product direction.':'Produktleitung.','European ambition.':'Europäische Ambition.','Founder & CEO of ORVECT. BSc student in Business & Economics at the Stockholm School of Economics.':'Gründer und CEO von ORVECT. Bachelorstudent in Business & Economics an der Stockholm School of Economics.','Leads product development and project management, head of international relations, partnerships, corporate strategy and European expansion, while overseeing relationships with automotive brands and workshop networks.':'Leitet Produktentwicklung und Projektmanagement, internationale Beziehungen, Partnerschaften, Unternehmensstrategie und europäische Expansion und betreut zugleich die Beziehungen zu Automobilmarken und Werkstattnetzwerken.','Contact for technical vehicle enquiries.':'Kontakt für technische Fahrzeuganfragen.'});
+  Object.assign(fr, {
+    'ORVECT connects fault codes and symptoms':'ORVECT relie codes défauts et symptômes',
+    'with vehicle data to rank likely causes':'aux données du véhicule pour classer les causes',
+    'and decide what to check next.':'et décider quoi vérifier ensuite.',
+    'The diagnosis evolves after every check.':'Le diagnostic évolue après chaque contrôle.',
+    'BEYOND THE FAULT CODE':'AU-DELÀ DU CODE D’ERREUR',
+    'Ranked hypotheses.':'Hypothèses classées.',
+    'Built from context.':'Construites à partir du contexte.',
+    'Model, engine, multiple fault codes, symptoms and test results are connected to surface the most relevant paths.':'Modèle, motorisation, plusieurs codes défauts, symptômes et résultats de tests sont mis en relation pour faire ressortir les pistes les plus pertinentes.',
+    'Vehicle, engine and VIN':'Véhicule, motorisation et VIN',
+    'Fault codes and symptoms':'Codes défauts et symptômes',
+    'Tests and technician input':'Tests et saisies du technicien',
+    'YOUR DIAGNOSIS, STEP BY STEP':'VOTRE DIAGNOSTIC, PAS À PAS',
+    'Test. Confirm.':'Testez. Confirmez.',
+    'Move forward.':'Avancez.',
+    'A fault code can point to several causes. ORVECT combines vehicle context with your test results to progressively narrow the possibilities.':'Un code défaut peut correspondre à plusieurs causes. ORVECT croise le contexte du véhicule et les résultats de vos contrôles pour vous aider à réduire progressivement les possibilités.',
+    'You test. ORVECT reassesses. You move forward.':'Vous testez. ORVECT réévalue. Vous avancez.',
+    'From information to the next decision.':'De l’information à la prochaine décision.',
+    'Know which path to check first.':'Sachez quelle piste vérifier en premier.'
+  });
+  Object.assign(sv, {
+    'ORVECT connects fault codes and symptoms':'ORVECT kopplar samman felkoder och symptom',
+    'with vehicle data to rank likely causes':'med fordonsdata för att rangordna sannolika orsaker',
+    'and decide what to check next.':'och avgöra vad som ska kontrolleras härnäst.',
+    'The diagnosis evolves after every check.':'Diagnosen utvecklas efter varje kontroll.',
+    'BEYOND THE FAULT CODE':'BORTOM FELKODEN','Ranked hypotheses.':'Rangordnade hypoteser.','Built from context.':'Byggda på sammanhang.',
+    'Model, engine, multiple fault codes, symptoms and test results are connected to surface the most relevant paths.':'Modell, motor, flera felkoder, symptom och testresultat kopplas samman för att lyfta fram de mest relevanta spåren.',
+    'Vehicle, engine and VIN':'Fordon, motor och VIN','Fault codes and symptoms':'Felkoder och symptom','Tests and technician input':'Tester och teknikerdata',
+    'YOUR DIAGNOSIS, STEP BY STEP':'DIN DIAGNOS, STEG FÖR STEG','Test. Confirm.':'Testa. Bekräfta.','Move forward.':'Gå vidare.',
+    'A fault code can point to several causes. ORVECT combines vehicle context with your test results to progressively narrow the possibilities.':'En felkod kan ha flera orsaker. ORVECT kombinerar fordonets sammanhang med dina testresultat för att stegvis begränsa möjligheterna.',
+    'You test. ORVECT reassesses. You move forward.':'Du testar. ORVECT omvärderar. Du går vidare.','From information to the next decision.':'Från information till nästa beslut.','Know which path to check first.':'Vet vilket spår du ska kontrollera först.'
+  });
+  Object.assign(de, {
+    'ORVECT connects fault codes and symptoms':'ORVECT verknüpft Fehlercodes und Symptome',
+    'with vehicle data to rank likely causes':'mit Fahrzeugdaten, um wahrscheinliche Ursachen zu priorisieren',
+    'and decide what to check next.':'und die nächste Prüfung zu bestimmen.',
+    'The diagnosis evolves after every check.':'Die Diagnose entwickelt sich nach jeder Prüfung weiter.',
+    'BEYOND THE FAULT CODE':'ÜBER DEN FEHLERCODE HINAUS','Ranked hypotheses.':'Priorisierte Hypothesen.','Built from context.':'Aus dem Kontext abgeleitet.',
+    'Model, engine, multiple fault codes, symptoms and test results are connected to surface the most relevant paths.':'Modell, Motorisierung, mehrere Fehlercodes, Symptome und Testergebnisse werden verknüpft, um die relevantesten Spuren hervorzuheben.',
+    'Vehicle, engine and VIN':'Fahrzeug, Motor und VIN','Fault codes and symptoms':'Fehlercodes und Symptome','Tests and technician input':'Tests und Technikereingaben',
+    'YOUR DIAGNOSIS, STEP BY STEP':'IHRE DIAGNOSE, SCHRITT FÜR SCHRITT','Test. Confirm.':'Testen. Bestätigen.','Move forward.':'Weiterkommen.',
+    'A fault code can point to several causes. ORVECT combines vehicle context with your test results to progressively narrow the possibilities.':'Ein Fehlercode kann mehrere Ursachen haben. ORVECT verbindet den Fahrzeugkontext mit Ihren Testergebnissen, um die Möglichkeiten schrittweise einzugrenzen.',
+    'You test. ORVECT reassesses. You move forward.':'Sie testen. ORVECT bewertet neu. Sie kommen weiter.','From information to the next decision.':'Von der Information zur nächsten Entscheidung.','Know which path to check first.':'Wissen, welche Spur zuerst geprüft werden sollte.'
+  });
   const dictionaries = {en:{},fr,sv,de};
   const originals = new WeakMap();
   const attributeOriginals = new WeakMap();
@@ -141,10 +185,10 @@
     const language = dictionaries[requested] ? requested : 'en';
     const dictionary = dictionaries[language];
     const metadata = {
-      en:['ORVECT — Beyond the fault code.','ORVECT is building automotive intelligence grounded in evidence. Vehicle context, traceable sources and human oversight for independent workshops.','Automotive intelligence. Grounded in evidence. Discover the early technical prototype.'],
-      fr:['ORVECT — Au-delà du code défaut.','ORVECT développe une intelligence automobile ancrée dans les preuves : contexte véhicule, sources traçables et contrôle humain pour les garages indépendants.','Intelligence automobile. Ancrée dans les preuves. Découvrez le premier prototype technique.'],
-      sv:['ORVECT — Bortom felkoden.','ORVECT bygger fordonsintelligens grundad i bevis: fordonssammanhang, spårbara källor och mänsklig kontroll för oberoende verkstäder.','Fordonsintelligens. Grundad i bevis. Upptäck den tidiga tekniska prototypen.'],
-      de:['ORVECT — Mehr als nur der Fehlercode.','ORVECT entwickelt Fahrzeugintelligenz auf Basis von Nachweisen: Fahrzeugkontext, nachvollziehbare Quellen und menschliche Kontrolle für unabhängige Werkstätten.','Fahrzeugintelligenz. Auf Nachweisen gegründet. Entdecken Sie den frühen technischen Prototyp.']
+      en:['ORVECT — Beyond the fault code.','ORVECT connects fault codes, symptoms and vehicle data to rank likely causes and help technicians decide what to check next.','From vehicle information to the next diagnostic decision.'],
+      fr:['ORVECT — Au-delà du code défaut.','ORVECT relie les codes défauts, les symptômes et les données du véhicule pour classer les causes probables et aider les techniciens à décider quoi vérifier ensuite.','De l’information véhicule à la prochaine décision diagnostique.'],
+      sv:['ORVECT — Bortom felkoden.','ORVECT kopplar samman felkoder, symptom och fordonsdata för att rangordna sannolika orsaker och hjälpa tekniker avgöra vad som ska kontrolleras härnäst.','Från fordonsinformation till nästa diagnostiska beslut.'],
+      de:['ORVECT — Mehr als nur der Fehlercode.','ORVECT verknüpft Fehlercodes, Symptome und Fahrzeugdaten, um wahrscheinliche Ursachen zu priorisieren und Technikern bei der nächsten Prüfung zu helfen.','Von Fahrzeuginformationen zur nächsten Diagnoseentscheidung.']
     }[language];
     document.documentElement.lang = language;
     selector.value = language;
