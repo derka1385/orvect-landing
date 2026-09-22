@@ -1,11 +1,14 @@
-// Content and contact links work without JavaScript; 3D is progressive enhancement.
-const container = document.querySelector('#core-scene');
-if (container && !navigator.connection?.saveData) {
-  import('./core-scene.js').then(({ mountCore }) => mountCore(container)).catch(() => {
-    container.classList.remove('is-ready');
-    document.querySelector('#scene-controls').hidden = true;
-    document.querySelector('#scene-caption').textContent = 'STATIC EDITION · CONCEPT SCULPTURE';
-  });
+// The opening mark connects the three reasoning layers without a 3D dependency.
+const identity = document.querySelector('.identity-art');
+if (identity) {
+  const buttons = [...identity.querySelectorAll('[data-identity-step]')];
+  buttons.forEach(button => button.addEventListener('click', () => {
+    identity.dataset.identityStage = button.dataset.identityStep;
+    buttons.forEach(item => item.setAttribute('aria-pressed', String(item === button)));
+    identity.querySelectorAll('[data-identity-copy]').forEach(copy => {
+      copy.hidden = copy.dataset.identityCopy !== button.dataset.identityStep;
+    });
+  }));
 }
 
 const proof = document.querySelector('[data-diagnostic-proof]');
@@ -94,26 +97,4 @@ if (proof && diagnosticCounter) {
   addEventListener('scroll', scheduleProofProgress, {passive:true});
   addEventListener('resize', scheduleProofProgress);
   scheduleProofProgress();
-}
-
-const contactClimax = document.querySelector('[data-contact-climax]');
-if (contactClimax) {
-  let contactFrame = 0;
-  const updateContactClimax = () => {
-    contactFrame = 0;
-    const range = Math.max(1, contactClimax.offsetHeight - innerHeight);
-    const progress = Math.max(0, Math.min(1, -contactClimax.getBoundingClientRect().top / range));
-    contactClimax.style.setProperty('--contact-title-y', `${12 - progress * 22}vh`);
-    contactClimax.style.setProperty('--contact-cta-y', `${96 - progress * 96}%`);
-    contactClimax.style.setProperty('--contact-copy-opacity', String(.32 + progress * .68));
-    contactClimax.style.setProperty('--contact-orbit-x', `${-progress * 8}vw`);
-    contactClimax.style.setProperty('--contact-orbit-y', `${progress * 9}vh`);
-    contactClimax.style.setProperty('--contact-progress', String(progress));
-  };
-  const scheduleContactClimax = () => {
-    if (!contactFrame) contactFrame = requestAnimationFrame(updateContactClimax);
-  };
-  addEventListener('scroll', scheduleContactClimax, {passive:true});
-  addEventListener('resize', scheduleContactClimax);
-  scheduleContactClimax();
 }

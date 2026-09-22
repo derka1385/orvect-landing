@@ -14,6 +14,9 @@
  const prev=document.querySelector('[data-demo-prev]'), next=document.querySelector('[data-demo-next]');
  const header=document.querySelector('body>.nav'), nav=document.querySelector('.chapter-nav');
  const mobile=matchMedia('(max-width:900px)');
+ const screenStack=document.createElement('div');
+ screenStack.className='demo-screen-stack';
+ document.querySelector('.demo-console').insertBefore(screenStack,document.querySelector('.demo-controls'));
  let active=0,pending=false;
  root.classList.add('demo-enhanced');
  function language(){
@@ -25,7 +28,13 @@
  }
  function show(index){
   active=Math.max(0,Math.min(3,index));
-  screens.forEach((el,i)=>{el.hidden=!mobile.matches&&i!==active;el.classList.toggle('is-active',i===active)});
+  screens.forEach((el,i)=>{
+   el.hidden=false;
+   el.classList.toggle('is-active',i===active);
+   el.inert=!mobile.matches&&i!==active;
+   if(!mobile.matches&&i!==active)el.setAttribute('aria-hidden','true');
+   else el.removeAttribute('aria-hidden');
+  });
   steps.forEach((el,i)=>el.classList.toggle('is-active',i===active));
   links.forEach((el,i)=>{if(i===active)el.setAttribute('aria-current','step');else el.removeAttribute('aria-current')});
   document.querySelector('[data-demo-current]').textContent='0'+(active+1)+' / 04';
@@ -54,8 +63,7 @@
  document.querySelector('[data-language]').addEventListener('change',language);
  function layout(){
   const console=document.querySelector('.demo-console');
-  const controls=document.querySelector('.demo-controls');
-  screens.forEach((el,i)=>{if(mobile.matches)steps[i].append(el);else console.insertBefore(el,controls)});
+  screens.forEach((el,i)=>{if(mobile.matches)steps[i].append(el);else screenStack.append(el)});
   console.hidden=mobile.matches;
   show(active);schedule();
  }

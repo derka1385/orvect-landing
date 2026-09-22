@@ -1,0 +1,14 @@
+/* Opening signature. Pulse taken from the program's published ov-mark animation. */
+.orvect-intro{position:fixed;inset:0;z-index:1000;display:grid;place-items:center;background:#101214;color:#f2f1ed;pointer-events:none;animation:orvect-intro-exit .5s 2.35s ease-in-out forwards}
+.orvect-intro-lockup{--mark-size:clamp(66px,18vw,104px);--word-size:clamp(44px,11.8vw,78px);--lockup-width:calc(var(--mark-size) + 20px + var(--word-size) * 3.4);position:relative;width:var(--lockup-width);height:120px}
+.orvect-intro-mark{position:absolute;left:0;top:50%;width:var(--mark-size);height:auto;fill:#ff5c28;overflow:visible;transform:translate(calc((var(--lockup-width) - var(--mark-size)) / 2),-50%);animation:orvect-intro-align .65s 1.4s cubic-bezier(.22,1,.36,1) forwards}
+.orvect-intro-mark path{clip-path:inset(0 0 0 0);animation:orvect-intro-pulse 1.25s ease-in-out 1,orvect-intro-settle .28s 1.57s forwards}
+.orvect-intro-mark path:nth-child(2){animation-delay:.16s,1.57s}
+.orvect-intro-mark path:nth-child(3){animation-delay:.32s,1.57s}
+.orvect-intro-name{position:absolute;left:calc(var(--mark-size) + 20px);top:50%;font-family:var(--body-font,'Space Grotesk',sans-serif);font-size:var(--word-size);font-weight:600;line-height:1;letter-spacing:-.065em;opacity:0;transform:translateY(calc(-50% + 12px));animation:orvect-intro-name .65s 1.55s cubic-bezier(.22,1,.36,1) forwards}
+@keyframes orvect-intro-pulse{0%,100%{clip-path:inset(62% 0 0 0)}50%{clip-path:inset(0 0 0 0)}}
+@keyframes orvect-intro-settle{to{clip-path:inset(0 0 0 0)}}
+@keyframes orvect-intro-align{to{transform:translate(0,-50%)}}
+@keyframes orvect-intro-name{to{opacity:1;transform:translateY(-50%)}}
+@keyframes orvect-intro-exit{to{opacity:0;visibility:hidden}}
+@media(prefers-reduced-motion:reduce){.orvect-intro{display:none}.orvect-intro *{animation:none}}

@@ -82,12 +82,13 @@ for(let i=0;i<105;i++){
  bar.style.cssText=`--bar-height:${12+envelope*(55+Math.abs(Math.sin(i*.71))*100)}px;--bar-opacity:${.25+envelope*.75};--bar-duration:${.6+(i%9)*.13}s;--bar-delay:-${i*.17}s`;
  wave.append(bar);
 }
-const reveals=document.querySelectorAll('.signal-experience,.principles article,.engine-list article,.vision-heading,.founder-grid');
+const reveals=document.querySelectorAll('.principles article,.engine-list article,.vision-heading,.founder-grid');
 const observer=new IntersectionObserver(entries=>entries.forEach(e=>e.target.classList.toggle('in-view',e.isIntersecting)),{threshold:.1});
 reveals.forEach(el=>{el.classList.add('reveal');observer.observe(el)});
+document.querySelectorAll('.signal-experience').forEach(el=>observer.observe(el));
 document.documentElement.classList.add('motion-ready');
 toggle.addEventListener('click',()=>{paused=!paused;toggle.setAttribute('aria-pressed',String(paused));document.documentElement.classList.toggle('motion-paused',paused);toggleText();if(!paused)schedule()});
-function toggleText(){const l=document.documentElement.lang;toggle.textContent=({fr:['Suspendre les effets','Reprendre les effets'],en:['Pause effects','Resume effects'],sv:['Pausa effekter','Återuppta effekter']}[l]||['Pause effects','Resume effects'])[Number(paused)]}
+function toggleText(){const l=document.documentElement.lang;toggle.textContent=({fr:['Suspendre les effets','Reprendre les effets'],en:['Pause effects','Resume effects'],sv:['Pausa effekter','Återuppta effekter'],de:['Effekte pausieren','Effekte fortsetzen']}[l]||['Pause effects','Resume effects'])[Number(paused)]}
 new MutationObserver(toggleText).observe(document.documentElement,{attributes:true,attributeFilter:['lang']});toggleText();
 reduced.addEventListener('change',()=>{if(reduced.matches){progress=.3;render()}else schedule()});
 if(reduced.matches)progress=.3;

@@ -1,0 +1,47 @@
+/* The identity itself becomes the diagram: context, evidence, clarity. */
+.hero .identity-art{min-width:0;display:flex;flex-direction:column;padding:9px 0 0 clamp(16px,3vw,48px);border-left:1px solid var(--line);margin-left:20px;align-self:stretch}
+.identity-header{display:flex;align-items:center;justify-content:space-between;gap:20px;color:var(--muted);font-size:9px}
+.identity-header>span:first-child{max-width:32ch}
+.identity-header>span:last-child{white-space:nowrap;color:var(--accent)}
+.identity-drawing{position:relative;flex:1;min-height:290px;display:grid;place-items:center;margin-block:20px 12px}
+.identity-drawing svg{display:block;width:100%;max-height:430px;overflow:visible}
+.identity-grid{color:#b8babd;opacity:.3}
+.identity-guides{stroke:#b8babd;stroke-width:.18;opacity:.42}
+.identity-stroke path{fill:#ff5c2812;stroke:var(--accent);stroke-width:.28;transition:fill .5s ease,stroke .5s ease}
+.identity-art[data-identity-stage="0"] [data-stroke="0"] path,.identity-art[data-identity-stage="1"] [data-stroke="1"] path,.identity-art[data-identity-stage="2"] [data-stroke="2"] path{fill:var(--accent);stroke:var(--accent)}
+.identity-trace{stroke:var(--accent);stroke-width:.24;stroke-dasharray:240;stroke-dashoffset:0;animation:identity-trace-in 1.8s 2.4s ease both}
+.identity-nodes{fill:var(--fg)}
+.identity-coordinate{position:absolute;bottom:0;right:0;color:var(--muted);font-size:8px;letter-spacing:.12em}
+.identity-steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;border-bottom:1px solid var(--line);margin-top:12px}
+.identity-steps button{position:relative;display:flex;align-items:center;gap:12px;min-width:0;min-height:56px;padding:12px 0;border:0;background:transparent;color:var(--muted);text-align:left;font:12px var(--body-font);transition:color .2s}
+.identity-steps button b{font:10px var(--mono-font);font-weight:400;color:inherit}
+.identity-steps button::after{content:'';position:absolute;bottom:-1px;left:0;right:0;height:2px;background:var(--accent);transform:scaleX(0);transform-origin:left;transition:transform .3s}
+.identity-steps button[aria-pressed=true]{color:var(--fg)}
+.identity-steps button[aria-pressed=true] b,.identity-steps button:hover{color:var(--accent)}
+.identity-steps button[aria-pressed=true]::after{transform:scaleX(1)}
+.identity-readout{min-height:112px;position:relative;padding:22px 36px 0 0}
+.identity-readout p{margin:0;font-size:17px;line-height:1.55;letter-spacing:-.02em;animation:identity-copy-in .35s ease both}
+.identity-readout p[hidden]{display:none}
+.identity-readout p span{display:block;margin-top:7px;max-width:42ch;font-size:13px;line-height:1.55;color:var(--muted);letter-spacing:0}
+.identity-direction{position:absolute;right:0;top:24px;font-size:28px;color:var(--accent)}
+@keyframes identity-trace-in{from{stroke-dashoffset:240}to{stroke-dashoffset:0}}
+@keyframes identity-copy-in{from{opacity:0;transform:translateY(5px)}to{opacity:1;transform:none}}
+@media(min-width:761px){.hero{grid-template-columns:1fr 1fr;column-gap:3vw}.hero .hero-baseline{margin-top:40px}.identity-drawing{max-height:480px}}
+@media(max-width:1000px) and (min-width:761px){.hero .identity-art{padding-left:20px;margin-left:0}.identity-steps button{gap:6px;font-size:11px}.identity-readout{min-height:145px}.identity-header{font-size:8px;gap:10px}}
+@media(max-width:760px){
+ .hero .identity-art{height:auto;min-height:0;margin:52px 0 0;padding:24px 0 0;border-left:0;border-top:1px solid var(--line);align-self:stretch}
+ .identity-header{font-size:9px}
+ .identity-drawing{min-height:0;margin-top:20px;flex:none}
+ .identity-drawing svg{max-height:360px}
+ .identity-readout{min-height:128px}
+ .identity-steps button{font-size:12px;min-height:56px}
+}
+@media(prefers-reduced-motion:reduce){.identity-art *{animation:none!important;transition:none!important}}
+@media(min-width:761px) and (max-width:900px){
+ body:has(.identity-art)>.nav{height:auto;min-height:125px;flex-wrap:wrap;gap:8px 16px;padding-top:16px;padding-bottom:0}
+ body:has(.identity-art)>.nav>.brand{order:1}
+ body:has(.identity-art)>.nav>.nav-actions{order:2;margin-left:auto}
+ body:has(.identity-art)>.nav nav{order:3;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));width:100%;gap:8px}
+ body:has(.identity-art)>.nav nav a{display:flex;align-items:center;justify-content:center;min-height:48px;padding:10px 0;font-size:12px;text-align:center;white-space:normal}
+}
+@media(max-width:760px){html[lang=de] .hero h1{font-size:clamp(54px,17vw,110px)}}

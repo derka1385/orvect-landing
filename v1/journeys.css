@@ -45,20 +45,13 @@
 .journey-page .principles p{color:#4c5155;font-size:17px;max-width:40ch}
 .journey-page .architecture{padding-block:var(--journey-space)}
 .journey-page .architecture-grid{gap:10%;grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
-.journey-page .architecture-grid>div:first-child{position:static;align-self:start;min-width:0}
+.journey-page .architecture-grid>div:first-child{position:sticky;top:calc(var(--header-height) + 88px);align-self:start;min-width:0}
 .journey-page .architecture-grid h2{font-size:clamp(42px,5vw,80px);overflow-wrap:break-word}
 .journey-page .mini-mark{width:190px;height:auto;margin-top:50px;opacity:.9}
 .journey-page .engine-list{counter-reset:engine}
 .journey-page .engine-list article{counter-increment:engine;min-height:45svh;display:flex;flex-direction:column;justify-content:center;border-top:1px solid var(--line);border-bottom:0;margin:0;padding:40px 0}
 .journey-page .engine-list h3{font-size:clamp(30px,3vw,48px);letter-spacing:-.04em;font-weight:500;max-width:16ch}
 .journey-page .engine-list p{font-size:17px;max-width:42ch}
-.journey-page .journey-finale{position:relative;isolation:isolate;background:var(--accent);color:var(--bg);padding-block:var(--journey-space);min-height:90svh;display:flex;flex-direction:column;justify-content:center;overflow:hidden}
-.journey-finale h2{max-width:11ch;font-size:clamp(64px,9vw,145px);position:relative}
-.journey-page .journey-finale .section-summary{color:var(--bg);max-width:45ch;position:relative;font-size:18px}
-.journey-finale .eyebrow{color:var(--bg)}
-.journey-finale .button{background:var(--bg);color:var(--fg);min-height:58px}
-.journey-finale .button:hover{background:var(--fg);color:var(--bg)}
-.finale-mark{position:absolute;right:3%;top:50%;transform:translateY(-50%);font-size:clamp(300px,56vw,850px);line-height:1;opacity:.14;pointer-events:none;z-index:-1}
 /* VISION: from a single focus to a wider horizon. */
 .journey-page .page-content>.vision{padding-block:48px 30px;min-height:100svh;position:relative;background:var(--bg);overflow:hidden}
 .journey-page .vision-heading{position:relative;z-index:1;grid-template-columns:1.2fr 1fr;gap:7%;align-items:start}
@@ -76,7 +69,8 @@
 .precision-dial::after{content:'';position:absolute;top:8%;left:calc(50% - 5px);width:10px;height:10px;border-radius:50%;background:#b83913}
 .journey-page .vision .journey-baseline{margin-top:0}
 .journey-page .scope-chapter{padding-block:var(--journey-space);background:var(--fg);color:var(--bg);display:grid;grid-template-columns:1fr 1fr;gap:0 10%}
-.scope-heading{grid-row:span 2}
+.scope-heading{grid-row:span 2;position:sticky;top:calc(var(--header-height) + 88px);align-self:start;min-width:0}
+.journey-page .scope-heading h2{font-size:clamp(40px,5vw,80px)}
 .scope-heading .eyebrow{color:#51565a}
 .journey-page .scope-heading .section-summary{color:#4c5155;margin-top:32px;font-size:18px;max-width:33ch}
 .journey-page .brand-list{display:block;border:0;margin:0;padding:0;counter-reset:brand}
@@ -134,7 +128,7 @@
  .chapter-nav{gap:16px;justify-content:space-between}
  .chapter-nav a{font-size:9px;gap:7px;min-height:60px}
  .journey-page .principle-chapter,.journey-page .architecture-grid,.journey-page .scope-chapter,.journey-page .roadmap-chapter{display:block}
- .chapter-heading,.journey-page .architecture-grid>div:first-child,.roadmap-intro{position:static}
+ .chapter-heading,.journey-page .architecture-grid>div:first-child,.roadmap-intro,.scope-heading{position:static}
  .journey-page .chapter-heading h2{font-size:clamp(42px,11vw,62px)}
  .precision-dial{width:180px;margin:36px 0 60px}
  .journey-page .principles article{min-height:0;padding-block:32px 64px}
@@ -150,14 +144,26 @@
  .journey-page .roadmap article{min-height:0;padding-block:32px 64px}
  .journey-page .roadmap article::before{font-size:100px}
  .journey-page .founder-coordinate{font-size:60px;margin-bottom:20px;padding-bottom:32px}
- .journey-page .journey-finale{min-height:80svh}
- .journey-page .journey-finale h2{font-size:clamp(54px,12vw,76px)}
  .journey-page h2{font-size:clamp(42px,10vw,64px)}
  .journey-page .founder h2{font-size:54px}
  .team-profile h2{font-size:46px!important}.team-profile h2 .founder-role{font-size:12px}
 }
-@media(prefers-reduced-motion:reduce){.journey-page *{scroll-behavior:auto!important;transition:none!important}.chapter-heading,.roadmap-intro,.journey-page .architecture-grid>div:first-child{position:static}}
+@media(prefers-reduced-motion:reduce){.journey-page *{scroll-behavior:auto!important;transition:none!important}.chapter-heading,.roadmap-intro,.journey-page .architecture-grid>div:first-child,.scope-heading{position:static}}
 @media(max-width:760px){.journey-page{--header-height:125px}}
 @media(max-width:1100px){.journey-page .nav-cta{display:none}.journey-page>.nav{gap:16px}.journey-page>.nav nav{gap:16px}}
 @media(min-width:601px) and (max-height:850px){.chapter-heading h2{font-size:clamp(30px,3.6vw,50px)}.precision-dial{width:160px;margin-top:24px}.chapter-heading .eyebrow{margin-bottom:18px}}
-@media(max-height:620px){.chapter-heading,.roadmap-intro{position:static}}
+@media(max-height:620px){.chapter-heading,.roadmap-intro,.scope-heading,.journey-page .architecture-grid>div:first-child{position:static}}
+
+/* Closing invitation: home-page sticky climax, journey palette. */
+.journey-page .contact,.journey-page .contact .eyebrow{color:var(--bg)}
+.journey-page .contact-cta{background:var(--bg);color:var(--fg)}
+.journey-page .contact-cta:hover{background:var(--fg);color:var(--bg)}
+.journey-page .contact h2{max-width:11ch;font-size:clamp(64px,9vw,145px)}
+.journey-page .contact-row p{max-width:45ch}
+.finale-mark{position:absolute;right:3%;top:50%;transform:translateY(-50%);font-size:clamp(300px,56vw,850px);line-height:1;opacity:.14;pointer-events:none;z-index:-1}
+@media(max-width:760px){.journey-page .contact h2{font-size:clamp(54px,12vw,86px)}.finale-mark{font-size:clamp(240px,70vw,420px)}}
+
+@media(min-width:601px) and (max-height:850px){
+ .journey-page .architecture-grid h2,.journey-page .scope-heading h2{font-size:clamp(36px,4vw,60px)}
+ .journey-page .architecture-grid .mini-mark{width:100px;margin-top:24px}
+}
