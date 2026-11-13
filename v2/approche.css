@@ -1,0 +1,67 @@
+/* V2 — L'approche : un dossier annoté. Le dossier reste en place, les principes défilent et allument leur ligne. */
+.page-hero h1 span{display:inline}
+.section-head h2 span{color:var(--accent-ink)}
+
+.dossier{padding-block:clamp(88px,12vh,140px)}
+.dossier-grid{display:grid;grid-template-columns:minmax(0,6fr) minmax(0,5fr);gap:clamp(40px,6vw,96px);align-items:start}
+.doc-wrap{position:sticky;top:calc(var(--header) + 32px)}
+.doc{background:var(--paper);color:var(--ink);border-radius:6px;box-shadow:0 40px 80px -40px #000000b3;overflow:hidden}
+.doc-head{display:flex;justify-content:space-between;gap:16px;padding:14px 24px;background:var(--paper-2);border-bottom:1px solid var(--line);font-size:13px;font-weight:600;letter-spacing:.04em;color:var(--ink-2)}
+.doc dl{margin:0}
+.doc-row{position:relative;display:grid;grid-template-columns:9.5em 1fr;gap:20px;padding:20px 24px;border-bottom:1px solid var(--line);transition:background-color .4s,opacity .4s}
+.doc-row:last-child{border-bottom:0}
+.doc dt{font-size:13px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--ink-2);padding-top:3px;transition:color .3s}
+.doc dd{margin:0;font-size:17px;line-height:1.45}
+.doc dd b{font-weight:600;margin-right:6px}
+.doc small{display:block;margin-top:4px;font-size:15px;color:var(--ink-2)}
+.doc .missing{color:var(--accent-ink)}
+/* Active line: an orange stroke from the mark slides in, the row warms; the others step back */
+.doc-row::before{content:"";position:absolute;left:8px;top:22px;width:5px;height:16px;background:var(--accent);transform:skewX(-22deg) scaleY(0);transform-origin:bottom;transition:transform .45s var(--ease)}
+[data-scrolly].has-active .doc-row{opacity:.42}
+[data-scrolly].has-active .doc-row.is-active{opacity:1;background:#ff5c2814}
+.doc-row.is-active::before{transform:skewX(-22deg) scaleY(1)}
+.doc-row.is-active dt{color:var(--accent-ink)}
+
+.notes{display:grid;gap:0}
+.notes-head{display:grid;gap:16px;padding-bottom:clamp(40px,8vh,80px)}
+.notes-head h2{font-size:clamp(32px,3.4vw,48px)}
+.notes-head h2 span{color:var(--accent)}
+.notes-head p{color:var(--on-dark-2);max-width:40ch}
+.note{display:grid;gap:10px;min-height:46vh;align-content:center;padding-block:24px;border-top:1px solid var(--line-dark);opacity:.38;transition:opacity .5s}
+.note.is-active{opacity:1}
+.note-k{font-size:13px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--accent)}
+.note h3{font-size:clamp(22px,2vw,28px);line-height:1.2;letter-spacing:-.02em}
+.note p:last-child{color:var(--on-dark-2);max-width:44ch}
+
+/* Three layers, slanted like the strokes of the mark */
+.structure{padding-block:clamp(96px,14vh,160px)}
+.structure{overflow-x:clip}   /* the strokes slide in from the right: never widen the page */
+.stack{list-style:none;margin:56px 0 0;padding:0;display:grid;gap:12px;max-width:980px}
+.stack li{display:grid;grid-template-columns:minmax(12em,1fr) 2fr;gap:24px;align-items:center;padding:22px 32px;background:var(--ink);color:var(--on-dark);transform:skewX(-14deg);transform-origin:bottom left}
+.stack li>*{transform:skewX(14deg)}
+.stack li:nth-child(1){margin-left:0}
+.stack li:nth-child(2){margin-left:clamp(16px,4vw,56px);background:var(--accent);color:var(--ink)}
+.stack li:nth-child(3){margin-left:clamp(32px,8vw,112px)}
+.stack b{font-weight:600;font-size:clamp(18px,1.6vw,22px)}
+.stack span{color:inherit;opacity:.82}
+.js .stack li{opacity:0;translate:40px 0;transition:opacity .6s ease,translate .9s var(--ease)}
+.stack.is-in li{opacity:1;translate:0 0}
+.stack.is-in li:nth-child(2){transition-delay:.12s}.stack.is-in li:nth-child(3){transition-delay:.24s}
+
+@media(max-width:980px){
+  .dossier-grid{grid-template-columns:1fr}
+  .doc-wrap{position:relative;top:auto}
+  .note{min-height:0;opacity:1;padding-block:28px}
+  [data-scrolly].has-active .doc-row{opacity:1}
+}
+@media(max-width:760px){
+  .doc-row{grid-template-columns:1fr;gap:6px;padding:16px 20px 16px 26px}
+  .doc-row::before{top:18px}
+  .doc-head{flex-direction:column;gap:2px;padding:12px 20px}
+  .stack li{grid-template-columns:1fr;gap:4px;padding:18px 24px;transform:skewX(-8deg)}
+  .stack li>*{transform:skewX(8deg)}
+  .stack li:nth-child(2){margin-left:12px}.stack li:nth-child(3){margin-left:24px}
+}
+@media(prefers-reduced-motion:reduce){
+  .js .stack li{opacity:1;translate:0 0}
+}

@@ -1,0 +1,17 @@
+/* V2 — Informations légales : une page de lecture, sobre. */
+.legal{max-width:calc(820px + 2 * var(--gutter));padding-block:clamp(64px,10vh,120px)}
+.legal-head{display:grid;gap:16px;padding-bottom:40px;border-bottom:2px solid var(--ink)}
+.legal-head h1{font-size:clamp(38px,4.6vw,64px);line-height:1;letter-spacing:-.035em}
+.legal-head p{color:var(--ink-2)}
+.legal-head nav{display:flex;flex-wrap:wrap;gap:10px 24px;font-size:15px}
+.legal-head nav a{text-underline-offset:4px;text-decoration-color:var(--line)}
+.legal section{padding-top:clamp(48px,7vh,80px);display:grid;gap:14px;scroll-margin-top:calc(var(--header) + 24px)}
+.legal h2{font-size:clamp(28px,2.8vw,38px);letter-spacing:-.03em;margin-bottom:8px}
+.legal h3{font-size:18px;font-weight:600;margin-top:14px}
+.legal p,.legal dd{color:var(--ink-2);max-width:68ch}
+.legal a{text-underline-offset:3px}
+.data{margin:0;display:grid;gap:16px}
+.data>div{padding:16px 0;border-top:1px solid var(--line)}
+.data dt{font-weight:600;color:var(--ink)}
+.data dd{margin:6px 0 0}
+.todo{background:#ff5c2829;color:var(--ink);padding:0 4px;border-radius:2px}

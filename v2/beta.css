@@ -1,0 +1,79 @@
+/* V2 — Bêta : une colonne sombre qui suit la candidature, un formulaire numéroté comme celui de l'app. */
+.beta-grid{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);min-height:calc(100svh - var(--header))}
+
+.beta-side{padding:clamp(48px,8vh,96px) clamp(24px,4vw,64px)}
+.side-inner{position:sticky;top:calc(var(--header) + 40px);display:grid;gap:28px;max-width:30em;margin-left:auto}
+.beta-side h1{font-size:clamp(38px,4.4vw,64px);line-height:1;letter-spacing:-.035em}
+.beta-side h1 span{display:block;color:var(--accent)}
+.beta-side .lead{color:var(--on-dark-2);font-size:clamp(17px,1.3vw,19px)}
+.js .beta-side h1,.js .beta-side .lead{animation:fade-up 1s var(--ease) backwards}
+.js .beta-side .lead{animation-delay:.12s}
+
+.progress{list-style:none;margin:8px 0 0;padding:0;display:grid;border-top:1px solid var(--line-dark)}
+.progress li{display:flex;align-items:center;gap:14px;padding:14px 0;border-bottom:1px solid var(--line-dark);color:var(--on-dark-2);transition:color .3s}
+.progress b{font-weight:600;font-variant-numeric:tabular-nums;margin-right:4px}
+.progress i{position:relative;flex:none;width:22px;height:22px;border-radius:50%;border:1.5px solid var(--on-dark-2);transition:background-color .3s,border-color .3s}
+.progress i::after{content:"";position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M3.5 8.5 6.5 11.5 12.5 4.5' fill='none' stroke='%23101214' stroke-width='2'/%3E%3C/svg%3E") center/14px no-repeat;transform:scale(0);transition:transform .45s var(--ease)}
+.progress li.is-done{color:var(--on-dark)}
+.progress li.is-done i{background:var(--accent);border-color:var(--accent)}
+.progress li.is-done i::after{transform:scale(1)}
+.side-facts{margin:0;display:grid;gap:16px}
+.side-facts dt{font-size:13px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--accent)}
+.side-facts dd{margin:4px 0 0;color:var(--on-dark-2);font-size:16px}
+
+.beta-form-col{padding:clamp(48px,8vh,96px) clamp(24px,5vw,80px) clamp(64px,10vh,120px)}
+form{max-width:760px;display:grid;gap:clamp(40px,6vh,64px)}
+.req-note{font-size:15px;color:var(--ink-2)}
+.req-note b,.field b,.fs-t b{color:var(--accent-ink);font-weight:600}
+.fs{margin:0;padding:0;border:0;min-width:0;display:grid;gap:24px}
+.fs legend{display:grid;grid-template-columns:44px 1fr;column-gap:16px;padding:0;margin-bottom:24px}
+.num{grid-row:span 2;display:grid;place-items:center;width:44px;height:44px;background:var(--accent);color:var(--ink);font-weight:600;font-variant-numeric:tabular-nums}
+.fs-k{font-size:13px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-2)}
+.fs-t{font-size:clamp(24px,2.4vw,32px);font-weight:500;letter-spacing:-.025em;line-height:1.15}
+.js .fs,.js .submit-row{animation:fade-up .9s var(--ease) backwards}
+.js .fs:nth-of-type(2){animation-delay:.1s}.js .fs:nth-of-type(3){animation-delay:.2s}.js .submit-row{animation-delay:.3s}
+
+.choice-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.choice{position:relative;display:block;cursor:pointer}
+.choice input{position:absolute;opacity:0;inset:0;margin:0;cursor:pointer}
+.choice span{display:grid;gap:4px;height:100%;padding:18px 20px 18px 52px;border:1px solid var(--line);background:#fbfaf7;transition:border-color .2s,background-color .2s,box-shadow .2s}
+.choice span::before{content:"";position:absolute;left:20px;top:21px;width:18px;height:18px;border-radius:50%;border:1.5px solid var(--ink-2);background:#fff;transition:border-width .2s,border-color .2s}
+.choice b{font-weight:600}
+.choice small{color:var(--ink-2);font-size:15px}
+.choice:hover span{border-color:var(--ink-2)}
+.choice input:checked+span{border-color:var(--ink);background:#fff;box-shadow:inset 0 0 0 1px var(--ink)}
+.choice input:checked+span::before{border:6px solid var(--accent)}
+.choice input:focus-visible+span{outline:2px solid var(--accent-ink);outline-offset:3px}
+
+.fields{display:grid;grid-template-columns:1fr 1fr;gap:20px 16px}
+.field{display:grid;gap:8px;align-content:start}
+.field.full{grid-column:1 / -1}
+.field>span{font-size:15px;font-weight:600}
+.field em{font-style:normal;font-weight:400;color:var(--ink-2);margin-left:6px}
+.field input,.field textarea,.field select{width:100%;min-height:50px;padding:12px 14px;border:1px solid var(--line);border-radius:0;background:#fbfaf7;color:var(--ink);font:inherit;font-size:16px;transition:border-color .2s,background-color .2s}
+.field textarea{resize:vertical;min-height:132px;line-height:1.5}
+.field select{appearance:none;background:#fbfaf7 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='m4 6 4 4 4-4' fill='none' stroke='%23c33d0e' stroke-width='1.8'/%3E%3C/svg%3E") right 14px center/16px no-repeat;padding-right:40px}
+.field input:hover,.field textarea:hover,.field select:hover{border-color:var(--ink-2)}
+.field input:focus,.field textarea:focus,.field select:focus{outline:none;border-color:var(--ink);background:#fff;box-shadow:inset 0 0 0 1px var(--ink)}
+.field input:user-invalid,.field textarea:user-invalid,.field select:user-invalid{border-color:var(--accent-ink);box-shadow:inset 0 0 0 1px var(--accent-ink)}
+.field small{font-size:14px;color:var(--ink-2)}
+::placeholder{color:#7d8186}
+
+.submit-row{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px 32px;padding-top:28px;border-top:1px solid var(--line)}
+.submit-row p{font-size:15px;color:var(--ink-2);max-width:34ch}
+.form-status{min-height:1.6em;font-size:15px;color:var(--accent-ink)}
+.individual{display:grid;gap:16px;padding:28px;border:1px solid var(--line);background:#fbfaf7;animation:fade-up .6s var(--ease) backwards}
+.individual h3{font-size:28px;letter-spacing:-.025em}
+.individual p{color:var(--ink-2);max-width:48ch}
+.individual .btn{justify-self:start}
+
+@media(max-width:980px){
+  .beta-grid{grid-template-columns:1fr}
+  .side-inner{position:relative;top:auto;margin-left:0;max-width:none}
+}
+@media(max-width:760px){
+  .choice-grid,.fields{grid-template-columns:1fr}
+  .fs legend{grid-template-columns:36px 1fr;column-gap:12px}
+  .num{width:36px;height:36px;font-size:15px}
+  .submit-row .btn{width:100%;justify-content:center}
+}

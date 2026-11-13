@@ -1,0 +1,94 @@
+/* V2 — La vision : un zoom du parc automobile vers le groupe Volkswagen, puis vers le diagnostic en profondeur. */
+.section-head h2 span,.team-title span{color:var(--accent)}
+.band-paper .team-title span{color:var(--accent-ink)}
+
+/* Static layout (no JS / reduced motion): the three levels read as a list */
+.focus{padding-block:clamp(56px,9vh,104px)}
+.focus-stage{display:grid;gap:40px;padding-inline:var(--gutter);max-width:calc(var(--max) + 2 * var(--gutter));margin-inline:auto}
+.rings{display:none}
+.ft{display:grid;gap:12px;justify-items:center;text-align:center}
+.ft-k{font-size:13px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--accent)}
+.ft h2{font-size:clamp(36px,4.6vw,66px);line-height:1.02;letter-spacing:-.035em}
+.ft h2 span{display:block;color:var(--accent)}
+.ft h3{font-size:clamp(28px,3vw,44px);letter-spacing:-.03em;line-height:1.05}
+.ft p:last-child{max-width:34ch;color:var(--on-dark-2)}
+.brands{list-style:none;margin:8px 0 0;padding:0;display:flex;flex-wrap:wrap;justify-content:center;gap:8px 10px;max-width:30em}
+.brands li{padding:8px 14px;border:1px solid var(--line-dark);border-radius:2px;font-size:16px}
+.caveat{margin-top:32px;font-size:14px;color:var(--on-dark-2);max-width:none}
+
+/* Live zoom: --k scale of the rings, --o1 --i2 --o2 --i3 text in/out, --f fill of the core */
+.focus-live{height:360svh;padding:0;--k:1;--o1:0;--i2:0;--o2:0;--i3:0;--f:0}
+.focus-live .focus-stage{position:sticky;top:0;height:100svh;overflow:hidden;display:block;max-width:none;padding:0}
+.focus-live .rings{display:block;position:absolute;left:50%;top:calc(50% + var(--header) / 2);width:0;height:0;transform:scale(var(--k))}
+.focus-live .rings i{position:absolute;left:0;top:0;border-radius:50%;translate:-50% -50%}
+.focus-live .r1{width:96vmin;height:96vmin;border:1px solid #ffffff2e;opacity:calc(1 - var(--o1))}
+.focus-live .r2{width:58vmin;height:58vmin;border:1px solid #ffffff59;opacity:calc(1 - var(--o2) * .7)}
+.focus-live .r3{width:22vmin;height:22vmin;border:2px solid var(--accent);background:rgb(255 92 40 / var(--f));opacity:var(--o2)}
+.focus-live .ft{position:absolute;left:50%;top:calc(50% + var(--header) / 2);width:min(calc(100% - 2 * var(--gutter)),760px);translate:-50% -50%}
+.focus-live .ft1{opacity:calc(1 - var(--o1));transform:translateY(calc(var(--o1) * -40px))}
+.focus-live .ft2{opacity:calc(var(--i2) * (1 - var(--o2)));transform:translateY(calc((1 - var(--i2)) * 24px - var(--o2) * 40px))}
+.focus-live .ft3{opacity:var(--i3);transform:translateY(calc((1 - var(--i3)) * 24px));color:var(--ink)}
+.focus-live .ft3 .ft-k,.focus-live .ft3 p:last-child{color:var(--ink)}
+.focus-live .ft3 h3{max-width:14ch}
+.focus-live .caveat{position:absolute;left:0;right:0;bottom:24px;margin:0;text-align:center;opacity:var(--i3)}
+
+/* Roadmap: a rule that has reached "now" */
+.roadmap{padding-block:clamp(96px,14vh,160px)}
+.steps-road{list-style:none;margin:56px 0 0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(24px,4vw,56px);position:relative}
+.steps-road::before,.steps-road::after{content:"";position:absolute;left:0;right:0;top:0;height:2px;background:var(--line-dark)}
+.steps-road::after{background:var(--accent);right:auto;width:calc((100% - 2 * clamp(24px,4vw,56px)) / 3 * .5);transform-origin:left;transform:scaleX(0);transition:transform 1.2s var(--ease) .2s}
+.steps-road.is-in::after{transform:scaleX(1)}
+.steps-road li{display:grid;gap:10px;align-content:start;padding-top:28px;position:relative}
+.steps-road li::before{content:"";position:absolute;top:-5px;left:0;width:12px;height:12px;border-radius:50%;background:var(--ink);border:2px solid var(--line-dark)}
+.steps-road li.now::before{background:var(--accent);border-color:var(--accent)}
+.road-k{font-size:13px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--on-dark-2)}
+.now .road-k{color:var(--accent)}
+.steps-road h3{font-size:clamp(20px,1.8vw,26px)}
+.steps-road p:last-child{color:var(--on-dark-2)}
+.js .steps-road li{opacity:0;transform:translateY(14px);transition:opacity .6s ease,transform .8s var(--ease)}
+.steps-road.is-in li{opacity:1;transform:none}
+.steps-road.is-in li:nth-child(2){transition-delay:.12s}.steps-road.is-in li:nth-child(3){transition-delay:.24s}
+
+/* Team */
+.team{padding-block:clamp(88px,12vh,140px)}
+.team-title{font-size:clamp(32px,3.6vw,52px);line-height:1.05;letter-spacing:-.035em}
+.team-title span{display:block}
+/* Nolann leads: a dark feature block; Lesly follows on one quieter line */
+.founder-feature{display:grid;grid-template-columns:minmax(0,6fr) minmax(0,5fr);gap:clamp(32px,5vw,80px);margin-top:48px;padding:clamp(32px,5vw,64px);background:var(--ink);color:var(--on-dark);border-radius:6px;position:relative;overflow:hidden}
+.founder-feature::before{content:"";position:absolute;right:-40px;bottom:-30px;width:clamp(180px,22vw,320px);aspect-ratio:120/100;background:url("../v1/assets/orvect-mark.svg") center/contain no-repeat;opacity:.08;pointer-events:none}
+.ff-id{display:grid;gap:14px;align-content:end}
+.person-k{font-size:13px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--accent-ink)}
+.founder-feature .person-k{color:var(--accent)}
+.founder-feature h3{font-size:clamp(52px,6.6vw,104px);line-height:.95;letter-spacing:-.045em}
+.founder-feature .tagline{font-size:clamp(20px,1.8vw,26px);color:var(--on-dark);letter-spacing:-.015em}
+.ff-bio{display:grid;gap:16px;align-content:end;position:relative}
+.ff-bio p{color:var(--on-dark-2)}
+.person-actions{display:flex;flex-wrap:wrap;align-items:center;gap:12px 22px;margin-top:8px}
+.founder-feature .link{color:var(--on-dark)}
+.founder-feature .link:hover{text-decoration-color:var(--on-dark)}
+.founder-feature .btn-primary:hover{background:var(--on-dark);color:var(--ink)}
+.cofounder{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,5fr) auto;gap:clamp(24px,4vw,56px);align-items:start;margin-top:24px;padding:32px 0 0;border-top:1px solid var(--line)}
+.cofounder h3{font-size:clamp(28px,2.8vw,40px);letter-spacing:-.035em;line-height:1;margin-top:10px}
+.cf-bio{display:grid;gap:8px}
+.cf-bio .tagline{font-size:19px;letter-spacing:-.015em}
+.cf-bio p:last-child{color:var(--ink-2)}
+.cf-actions{flex-direction:column;align-items:flex-start;margin-top:0;gap:10px}
+.link{font-size:15px;text-underline-offset:4px;text-decoration-color:var(--line)}
+.link:hover{text-decoration-color:var(--ink)}
+.cofounder.is-in{transition-delay:.12s}
+
+.cta-band{border-top:1px solid var(--line-dark)}
+
+@media(max-width:760px){
+  .steps-road{grid-template-columns:1fr;gap:32px;padding-left:24px}
+  .steps-road::before,.steps-road::after{left:5px;right:auto;top:0;bottom:0;width:2px;height:auto}
+  .steps-road::after{height:calc(100% / 3 * .5);width:2px;transform-origin:top;transform:scaleY(0)}
+  .steps-road.is-in::after{transform:scaleY(1)}
+  .steps-road li{padding-top:0}
+  .steps-road li::before{top:6px;left:-24px}
+  .founder-feature,.cofounder{grid-template-columns:1fr}
+  .cf-actions{flex-direction:row;flex-wrap:wrap}
+  .focus-live .r1{width:120vmin;height:120vmin}
+  .focus-live .r2{width:82vmin;height:82vmin}
+  .focus-live .r3{width:30vmin;height:30vmin}
+}

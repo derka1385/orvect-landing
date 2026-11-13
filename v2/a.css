@@ -1,0 +1,177 @@
+/* ORVECT V2-A — même identité, plus claire.
+   Arrivée : le logo pulse comme un chargement, puis ORVECT apparaît en glitch. Au scroll, le logo s'ouvre et le produit monte au milieu. */
+
+/* ---------- Intro ---------- */
+/* The mark is drawn with three slanted strokes (22°, the angle of the logo). On scroll they part and hand the screen over to the product.
+   Static layout below = no JS or reduced motion; .intro-live hands every position to v2.js (transforms only). */
+.intro{padding:clamp(56px,10vh,120px) var(--gutter) 0}
+.stage{display:grid;justify-items:center;gap:clamp(28px,5vh,56px);text-align:center;max-width:1240px;margin-inline:auto}
+.lockup{display:grid;justify-items:center;gap:14px}
+.wordmark{position:relative;margin:0;font-size:clamp(44px,5vw,72px);font-weight:700;line-height:1;letter-spacing:-.045em}
+.method-title{max-width:24ch}
+.layers{display:flex;align-items:flex-end;justify-content:center;gap:clamp(10px,1.4vw,18px);height:clamp(110px,14vw,170px)}
+.layer{--sw:40px;position:relative;width:var(--sw);height:72%}
+.layer:nth-child(2){height:100%}
+.skew{position:absolute;left:0;bottom:0;width:100%;height:100%;transform:skewX(-22deg);transform-origin:bottom left}
+.fill{position:absolute;inset:0;background:var(--accent)}
+.intro:not(.intro-live) .layers{order:-1}
+.product{margin:0;width:min(100%,1040px)}
+.shot-frame{border:1px solid var(--line);border-radius:6px;overflow:hidden;background:var(--ink);box-shadow:0 30px 60px -30px #10121459,0 2px 6px #1012140f}
+figcaption{margin-top:12px;font-size:14px;color:var(--ink-2)}
+.cue{display:none}
+
+.intro-live{height:200svh;padding:0;margin-top:calc(-1 * var(--header))}
+.intro-live .stage{position:sticky;top:0;height:100svh;overflow:hidden;display:block;max-width:none}
+.intro-live .lockup,.intro-live .product,.intro-live .layer{position:absolute;left:0;top:0;will-change:transform,opacity}
+.intro-live .lockup{width:100%}
+.intro-live .layers{display:block;height:auto}
+.intro-live .layer{width:var(--sw);height:var(--h);z-index:1}
+.intro-live .product{left:50%}
+.intro-live .cue{display:flex;flex-direction:column;align-items:center;gap:10px;position:absolute;left:50%;bottom:28px;transform:translateX(-50%);margin:0;font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-2);animation:fade-up 1s var(--ease) 2.2s backwards}
+.intro-live .cue span{width:1px;height:40px;background:linear-gradient(var(--ink-2) 50%,transparent 50%);background-size:1px 80px;animation:cue 1.8s ease-in-out infinite}
+@keyframes cue{from{background-position:0 -40px}to{background-position:0 40px}}
+/* Arrival: the loading pulse of the ORVECT mark (same as the opening signature), then the name glitches in.
+   No slogan on screen: the arrival reads the same in every language. */
+.intro-live .fill{--d:.1s;clip-path:inset(0);animation:mark-pulse 1.25s ease-in-out var(--d) backwards,mark-settle .45s var(--ease) calc(var(--d) + 1.25s) forwards}
+.intro-live .layer:nth-child(2) .fill{--d:.26s}.intro-live .layer:nth-child(3) .fill{--d:.42s}
+@keyframes mark-pulse{0%,100%{clip-path:inset(62% 0 0 0)}50%{clip-path:inset(0)}}
+@keyframes mark-settle{from{clip-path:inset(62% 0 0 0)}to{clip-path:inset(0)}}
+.intro-live .wordmark{animation:glitch-in .8s steps(1,end) 1.5s backwards}
+.intro-live .wordmark::before,.intro-live .wordmark::after{content:attr(data-text);position:absolute;inset:0;opacity:0;pointer-events:none}
+.intro-live .wordmark::before{color:var(--accent);animation:glitch-a .8s steps(1,end) 1.5s}
+.intro-live .wordmark::after{color:var(--ink-2);animation:glitch-b .8s steps(1,end) 1.5s}
+@keyframes glitch-in{0%{opacity:0}8%{opacity:1;transform:translateX(-4px)}14%{opacity:.15;transform:none}22%{opacity:1;transform:translateX(3px) skewX(-10deg)}30%{opacity:.5;transform:none}38%,100%{opacity:1;transform:none}}
+@keyframes glitch-a{0%{opacity:1;clip-path:inset(8% 0 70% 0);transform:translateX(-10px)}14%{clip-path:inset(55% 0 22% 0);transform:translateX(7px)}28%{clip-path:inset(30% 0 48% 0);transform:translateX(-5px)}42%{clip-path:inset(72% 0 6% 0);transform:translateX(12px)}56%{clip-path:inset(4% 0 82% 0);transform:translateX(-3px)}70%{opacity:1;clip-path:inset(40% 0 42% 0);transform:translateX(2px)}78%,100%{opacity:0}}
+@keyframes glitch-b{0%{opacity:.8;clip-path:inset(62% 0 14% 0);transform:translateX(8px)}18%{clip-path:inset(12% 0 64% 0);transform:translateX(-9px)}34%{clip-path:inset(46% 0 30% 0);transform:translateX(5px)}50%{clip-path:inset(80% 0 2% 0);transform:translateX(-6px)}64%{opacity:.8;clip-path:inset(20% 0 58% 0);transform:translateX(3px)}72%,100%{opacity:0}}
+
+/* ---------- Method: the mark fills one stroke per step ---------- */
+.method-sec{padding-block:clamp(96px,14vh,160px)}
+.method-sec h2 span{display:block;color:var(--accent-ink)}
+.method-steps{list-style:none;margin:56px 0 0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:2px solid var(--ink)}
+.method-steps li{display:grid;gap:14px;align-content:start;padding:32px 32px 0 0}
+.method-steps li+li{padding-left:32px;border-left:1px solid var(--line)}
+.method-steps h3{font-size:clamp(22px,2vw,28px);letter-spacing:-.02em}
+.method-steps p{color:var(--ink-2);max-width:36ch}
+.step-mark{width:84px;height:auto;margin-bottom:8px}
+.step-mark path{fill:var(--line);transition:fill .5s ease}
+.method-steps li:nth-child(1) path:nth-child(-n+1),.method-steps li:nth-child(2) path:nth-child(-n+2),.method-steps li:nth-child(3) path{fill:var(--accent)}
+.js .method-steps:not(.is-in) li path{fill:var(--line)}
+.method-steps li:nth-child(2) path{transition-delay:.25s}.method-steps li:nth-child(3) path{transition-delay:.5s}
+.method-steps li:nth-child(2) path:nth-child(2){transition-delay:.4s}.method-steps li:nth-child(3) path:nth-child(2){transition-delay:.65s}.method-steps li:nth-child(3) path:nth-child(3){transition-delay:.8s}
+
+/* ---------- Proof: the count climbs with the scroll, the mark fills a third at a time ---------- */
+.proof{position:relative;height:180svh}
+.proof-stage{position:sticky;top:0;height:100svh;display:grid;align-items:center;overflow:hidden}
+.proof-grid{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:clamp(32px,5vw,80px);align-items:center}
+.proof-num{margin:0;line-height:.82}
+.proof-num strong{display:block;font-size:clamp(120px,17vw,260px);font-weight:500;letter-spacing:-.05em;color:var(--accent);font-variant-numeric:tabular-nums}
+.proof h2{margin-top:20px;font-size:clamp(28px,3vw,44px);letter-spacing:-.03em}
+.proof-note{margin-top:16px;max-width:46ch;color:var(--on-dark-2)}
+.proof-mark{width:100%;max-width:420px;justify-self:end;overflow:visible}
+.proof-mark path{stroke:#ffffff33;stroke-width:.6}
+.proof-mark path:nth-child(1){fill:rgb(255 92 40 / var(--f1,0))}.proof-mark path:nth-child(2){fill:rgb(255 92 40 / var(--f2,0))}.proof-mark path:nth-child(3){fill:rgb(255 92 40 / var(--f3,0))}
+
+/* ---------- Wireframe vehicle (from v1) ---------- */
+.vehicle{position:relative;height:240svh}
+.vehicle-stage{position:sticky;top:0;height:100svh;overflow:hidden}
+.vehicle canvas{position:absolute;inset:0;width:100%;height:100%}
+.vehicle-copy{position:absolute;left:0;right:0;top:22%;pointer-events:none}
+.vehicle-copy h2{font-size:clamp(36px,4.6vw,66px);line-height:1;letter-spacing:-.035em;max-width:9ch}
+.vehicle-copy h2 span{color:var(--accent)}
+.vehicle-copy p{margin-top:20px;max-width:30ch;color:var(--on-dark-2);font-size:clamp(17px,1.3vw,19px)}
+.vehicle-progress{position:absolute;left:0;right:0;bottom:40px}
+.vehicle-progress i{display:block;height:2px;background:var(--line-dark);position:relative;overflow:hidden}
+.vehicle-progress i::after{content:"";position:absolute;inset:0;background:var(--accent);transform-origin:left;transform:scaleX(var(--vp,0))}
+
+/* ---------- In / out ---------- */
+.io{padding-block:clamp(96px,14vh,160px) 0}
+.io-grid{display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);gap:clamp(20px,4vw,56px);align-items:center;margin-top:56px}
+.chips{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:10px}
+.chips-in{justify-content:flex-end}
+.chips li{padding:10px 16px;border:1px solid var(--ink);border-radius:2px;font-size:16px;line-height:1.3;background:var(--paper)}
+.chips-out li{border-color:var(--line);background:#fff}
+.chips-out .next{background:var(--accent);border-color:var(--accent);font-weight:600}
+.io-mark{position:relative;width:clamp(72px,8vw,112px)}
+.io-mark svg{display:block;width:100%;fill:var(--accent);overflow:visible}
+.io-mark i{position:absolute;left:-40%;right:-40%;top:50%;height:1px;background:var(--ink);z-index:-1;transform-origin:left;transform:scaleX(0);transition:transform 1.1s var(--ease) .1s}
+.io.is-in .io-mark i{transform:scaleX(1)}
+.js .io .chips li,.js .io .io-mark path{opacity:0;transition:opacity .5s ease,transform .7s var(--ease)}
+.js .io .chips-in li{transform:translateX(-14px)}
+.js .io .chips-out li{transform:translateX(14px)}
+.js .io .io-mark path{transform-box:fill-box;transform:translateY(20%)}
+.io.is-in .chips li,.io.is-in .io-mark path{opacity:1;transform:none}
+.io.is-in .chips-in li:nth-child(2){transition-delay:.06s}.io.is-in .chips-in li:nth-child(3){transition-delay:.12s}.io.is-in .chips-in li:nth-child(4){transition-delay:.18s}.io.is-in .chips-in li:nth-child(5){transition-delay:.24s}
+.io.is-in .io-mark path:nth-child(1){transition-delay:.35s}.io.is-in .io-mark path:nth-child(2){transition-delay:.45s}.io.is-in .io-mark path:nth-child(3){transition-delay:.55s}
+.io.is-in .chips-out li:nth-child(1){transition-delay:.7s}.io.is-in .chips-out li:nth-child(2){transition-delay:.78s}.io.is-in .chips-out li:nth-child(3){transition-delay:.86s}.io.is-in .chips-out li:nth-child(4){transition-delay:1s}
+.facts{display:grid;grid-template-columns:1fr 1fr;margin:clamp(64px,9vh,96px) 0 0;border-top:2px solid var(--ink)}
+.facts>div{padding:20px 32px 0 0}
+.facts>div+div{padding-left:32px;border-left:1px solid var(--line)}
+.facts dt{font-size:13px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-2)}
+.facts dd{margin:8px 0 0}
+.count{display:block;color:var(--accent-ink);font-size:clamp(56px,6vw,84px);font-weight:500;line-height:1;letter-spacing:-.04em;font-variant-numeric:tabular-nums}
+
+/* ---------- Limits ---------- */
+.limits{margin-top:clamp(96px,14vh,160px);background:var(--paper-2);border-block:1px solid var(--line);padding-block:clamp(72px,10vh,112px)}
+.limits-grid{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(32px,5vw,72px);align-items:start}
+.never{list-style:none;margin:0;padding:0}
+.never li{display:grid;grid-template-columns:auto 1fr;gap:16px;align-items:baseline;padding:18px 0;border-bottom:1px solid var(--line);font-size:clamp(18px,1.5vw,21px);line-height:1.4}
+.never li:first-child{border-top:1px solid var(--ink)}
+.never li::before{content:"Jamais";font-size:13px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--accent-ink);min-width:6.5ch}
+.js .never li{opacity:0;transform:translateY(10px);transition:opacity .5s ease,transform .7s var(--ease)}
+.never.is-in li{opacity:1;transform:none}
+.never.is-in li:nth-child(2){transition-delay:.1s}.never.is-in li:nth-child(3){transition-delay:.2s}.never.is-in li:nth-child(4){transition-delay:.3s}
+
+/* ---------- Cases ---------- */
+.cases{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:clamp(32px,5vw,72px);align-items:center;padding-block:clamp(96px,14vh,160px) 0}
+.cases .shot{margin:0}
+.js .cases .shot-frame{clip-path:inset(0 0 100% 0);transition:clip-path 1.1s var(--ease)}
+.cases .shot.is-in .shot-frame{clip-path:inset(0)}
+
+/* ---------- Doors ---------- */
+.doors{display:grid;grid-template-columns:1fr 1fr;padding-block:clamp(96px,14vh,160px)}
+.door{display:grid;gap:18px;align-content:start;padding:0 clamp(24px,4vw,56px) 0 0}
+.door+.door{padding:0 0 0 clamp(24px,4vw,56px);border-left:1px solid var(--line)}
+.door h3{font-size:clamp(24px,2.2vw,30px);letter-spacing:-.025em;line-height:1.15}
+.door p{color:var(--ink-2);max-width:46ch}
+.door .btn{justify-self:start;margin-top:6px}
+.founders{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.founders li{display:grid;gap:2px}
+.founders span{font-size:15px;color:var(--ink-2)}
+.founders li:first-child b{font-size:22px;letter-spacing:-.02em}
+.door .text-more{justify-self:start;font-size:15px;color:var(--ink-2);text-underline-offset:4px}
+.door .text-more:hover{color:var(--ink)}
+.js .door{opacity:0;transform:translateY(16px);transition:opacity .7s ease,transform .8s var(--ease)}
+.door.is-in{opacity:1;transform:none}
+.door+.door.is-in{transition-delay:.12s}
+
+/* ---------- Responsive ---------- */
+@media(max-width:980px){
+  .method-steps{grid-template-columns:1fr}
+  .method-steps li,.method-steps li+li{padding:28px 0;border-left:0;border-bottom:1px solid var(--line)}
+  .proof-grid{grid-template-columns:1fr}
+  .proof-mark{max-width:200px;justify-self:start;order:-1}
+  .limits-grid,.cases{grid-template-columns:1fr}
+  .io-grid{grid-template-columns:1fr;justify-items:center;text-align:center}
+  .chips,.chips-in{justify-content:center}
+  .io-mark i{display:none}
+  .facts{grid-template-columns:1fr 1fr}
+  .facts>div:first-child{grid-column:1 / -1;padding-bottom:16px}
+  .facts>div:nth-child(2){padding-left:0;border-left:0}
+  .facts>div+div{border-top:1px solid var(--line);padding-top:16px}
+}
+@media(max-width:760px){
+  .vehicle{height:200svh}
+  .vehicle-copy{top:14%}
+  .intro-live{height:180svh}
+  .facts{grid-template-columns:1fr}
+  .facts>div,.facts>div+div{padding:16px 0 12px;border-left:0}
+  .doors{grid-template-columns:1fr;gap:48px}
+  .door+.door{padding:40px 0 0;border-left:0;border-top:1px solid var(--line)}
+}
+@media(prefers-reduced-motion:reduce){
+  .proof{height:auto}
+  .proof-stage{position:relative;min-height:80svh;padding-block:80px}
+  .js .io .chips li,.js .io .io-mark path,.js .never li,.js .door{opacity:1!important;transform:none!important}
+  .js .cases .shot-frame{clip-path:none}
+  .io-mark i{transform:scaleX(1)}
+}

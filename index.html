@@ -1,68 +1,167 @@
 <!doctype html>
-<html lang="en">
+<html lang="fr">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#101214">
-<meta name="description" content="ORVECT connects fault codes, symptoms and vehicle data to rank likely causes and help technicians decide what to check next.">
-<meta property="og:title" content="ORVECT — Beyond the fault code."><meta property="og:description" content="From vehicle information to the next diagnostic decision."><meta property="og:site_name" content="ORVECT"><meta property="og:type" content="website"><meta property="og:url" content="https://orvect.fr/"><meta property="og:image" content="https://orvect.fr/v1/assets/orvect-social-preview.png"><meta name="twitter:card" content="summary_large_image"><meta name="robots" content="index,follow"><link rel="canonical" href="https://orvect.fr/">
-<title>ORVECT — Beyond the fault code.</title><link rel="icon" href="favicon.ico" sizes="48x48"><link rel="icon" href="favicon.svg" type="image/svg+xml"><link rel="icon" href="icon-192.png" type="image/png" sizes="192x192"><link rel="apple-touch-icon" href="apple-touch-icon.png"><link rel="manifest" href="site.webmanifest"><link rel="preload" href="v1/assets/SpaceGrotesk.ttf" as="font" type="font/ttf" crossorigin><link rel="stylesheet" href="v1/styles.css?v=diagnostic-counter-1"><link rel="stylesheet" href="v1/experience.css?v=climax-3"><script src="v1/experience.js?v=climax-3" defer></script><script src="v1/i18n.js?v=identity-1" defer></script><script type="module" src="v1/app.js?v=identity-1"></script>
-<link rel="stylesheet" href="v1/pages.css?v=pages-1"><script type="module" src="v1/pages.js?v=climax-3"></script>
-<link rel="stylesheet" href="v1/intro.css?v=1">
-<link rel="stylesheet" href="v1/identity.css?v=1">
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#f2f1ed">
+<meta name="description" content="ORVECT relie les codes défauts, les symptômes et les données du véhicule pour classer les causes probables et aider les techniciens à décider quoi vérifier ensuite.">
+<meta property="og:title" content="ORVECT — Au-delà du code défaut."><meta property="og:description" content="De l’information véhicule à la prochaine décision diagnostique."><meta property="og:site_name" content="ORVECT"><meta property="og:type" content="website"><meta property="og:locale" content="fr_FR"><meta property="og:url" content="https://orvect.fr/"><meta property="og:image" content="https://orvect.fr/v1/assets/orvect-social-preview.png"><meta name="twitter:card" content="summary_large_image"><meta name="robots" content="index,follow"><link rel="canonical" href="https://orvect.fr/">
+<script>try{var l=localStorage.getItem('orvect-lang');if(!l){l='en';for(var a=navigator.languages||[navigator.language],i=0;i<a.length;i++){var c=String(a[i]).slice(0,2).toLowerCase();if(/^(fr|en|de|sv)$/.test(c)){l=c;break}}}if(l!=='fr'){var h=document.documentElement;h.lang=l;h.classList.add('i18n-wait');setTimeout(function(){h.classList.remove('i18n-wait')},3000)}}catch(e){}</script>
+<title>ORVECT — Au-delà du code défaut.</title>
+<link rel="icon" href="favicon.ico" sizes="48x48"><link rel="icon" href="favicon.svg" type="image/svg+xml"><link rel="icon" href="icon-192.png" type="image/png" sizes="192x192"><link rel="apple-touch-icon" href="apple-touch-icon.png"><link rel="manifest" href="site.webmanifest">
+<link rel="preload" href="v1/assets/SpaceGrotesk.ttf" as="font" type="font/ttf" crossorigin>
+<link rel="stylesheet" href="v2/site.css?v=6"><link rel="stylesheet" href="v2/a.css?v=13">
+<script src="v2/i18n.js?v=3" defer></script><script src="v2/v2.js?v=14" defer></script><script src="v2/vehicle.js?v=1" defer></script>
 <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://orvect.fr/#org","name":"ORVECT","url":"https://orvect.fr/","logo":"https://orvect.fr/brand-kit/logos/icon-orange.png"},{"@type":"WebSite","name":"ORVECT","url":"https://orvect.fr/","publisher":{"@id":"https://orvect.fr/#org"}}]}</script>
 </head>
-<body id="page-top">
-<script src="v1/intro.js?v=1"></script>
-<a class="skip" href="#main">Skip to content</a>
-<header class="nav wrap"><a class="brand" href="index.html" aria-label="ORVECT home"><img src="v1/assets/orvect-mark.svg" alt="ORVECT logo" width="37" height="36">ORVECT</a><nav aria-label="Main navigation"><a href="index.html" aria-current="page">Home</a><a href="approche.html">The approach</a><a href="prototype.html">The prototype</a><a href="vision.html">The vision</a><a href="beta.html">Beta program</a></nav><div class="nav-actions"><label class="language-control"><span class="sr-only">Language</span><select data-language aria-label="Language"><option value="fr" lang="fr">Français</option><option value="en" lang="en">English</option><option value="sv" lang="sv">Svenska</option><option value="de" lang="de">Deutsch</option></select><svg class="language-chevron" aria-hidden="true" viewBox="0 0 16 16"><path d="m4 6 4 4 4-4"/></svg></label><a class="button nav-cta" href="beta.html">Join the beta <span aria-hidden="true">↗</span></a></div></header>
+<body>
+<a class="skip" href="#main">Aller au contenu</a>
+
+<header class="site-header" data-header>
+  <div class="bar">
+    <a class="brand" href="index.html" aria-label="ORVECT, accueil"><img src="v1/assets/orvect-mark.svg" alt="" width="30" height="25">ORVECT</a>
+    <nav aria-label="Navigation principale">
+      <a href="approche.html">L’approche</a>
+      <a href="prototype.html">Le prototype</a>
+      <a href="vision.html">La vision</a>
+    </nav>
+    <a class="btn btn-primary btn-small" href="beta.html">Rejoindre la bêta <svg aria-hidden="true" viewBox="0 0 16 16"><path d="M5 11 11 5M6 5h5v5"/></svg></a>
+    <select class="lang-select" data-lang aria-label="Langue"><option value="fr">FR</option><option value="en">EN</option><option value="de">DE</option><option value="sv">SV</option></select>
+    <button class="menu-toggle" type="button" data-menu-toggle aria-expanded="false" aria-label="Menu"><span></span><span></span></button>
+  </div>
+</header>
+
 <main id="main">
-<section class="hero wrap" id="top" aria-labelledby="hero-title">
-<div class="hero-copy"><p class="eyebrow"><span class="signal-dot"></span> INDEPENDENT THINKING. AUTOMOTIVE INTELLIGENCE.</p><h1 id="hero-title">Beyond<br>the fault<br><span>code.</span></h1><p class="lead">ORVECT connects fault codes and symptoms<br>with vehicle data to rank likely causes<br>and decide what to check next.<br>The diagnosis evolves after every check.</p><div class="actions"><a class="button primary" href="prototype.html">Explore the prototype <span aria-hidden="true">↗</span></a><a class="text-link" href="approche.html">Our approach <span aria-hidden="true">↓</span></a></div></div>
-<div class="hero-art identity-art" data-identity-stage="0">
-<div class="identity-header mono"><span>ORVECT / DIAGNOSTIC REASONING</span><span aria-hidden="true">01 — 03</span></div>
-<div class="identity-drawing" aria-hidden="true">
-<svg viewBox="-18 -16 158 118" fill="none">
-<defs><pattern id="identity-grid" width="12" height="12" patternUnits="userSpaceOnUse"><path d="M12 0H0V12" stroke="currentColor" stroke-width=".12"/></pattern></defs>
-<path fill="url(#identity-grid)" d="M-18-16h158v118H-18z" class="identity-grid"/>
-<g class="identity-guides"><path d="M-18 76H140M-18 24H140M70-16V102M8 102L56-16M41 102L89-16M74 102L122-16"/><circle cx="70" cy="4" r="3"/><path d="M-12-7v6m-3-3h6M128 90v6m-3-3h6"/></g>
-<g class="identity-stroke" data-stroke="0"><path d="M8 76 29 24h19L27 76Z"/></g>
-<g class="identity-stroke" data-stroke="1"><path d="M41 76 70 4h19L60 76Z"/></g>
-<g class="identity-stroke" data-stroke="2"><path d="M74 76 95 24h19L93 76Z"/></g>
-<path class="identity-trace" d="M-18 86H17L38 34H56L64 14H78M65 86H84L104 34H140"/>
-<g class="identity-nodes"><circle cx="17" cy="86" r="1"/><circle cx="64" cy="14" r="1"/><circle cx="104" cy="34" r="1"/></g>
-</svg><span class="identity-coordinate mono">59°19′ N / 18°04′ E</span>
-</div>
-<div class="identity-steps" role="group" aria-label="Explore the reasoning layers">
-<button type="button" data-identity-step="0" aria-pressed="true" aria-controls="identity-context"><b>01</b><span>Context</span></button>
-<button type="button" data-identity-step="1" aria-pressed="false" aria-controls="identity-evidence"><b>02</b><span>Evidence</span></button>
-<button type="button" data-identity-step="2" aria-pressed="false" aria-controls="identity-clarity"><b>03</b><span>Clarity</span></button>
-</div>
-<div class="identity-readout" aria-live="polite">
-<p id="identity-context" data-identity-copy="0">Start with the vehicle.<br><span>Configuration gives every signal its context.</span></p>
-<p id="identity-evidence" data-identity-copy="1" hidden>Connect the evidence.<br><span>Sources and test results guide the reasoning.</span></p>
-<p id="identity-clarity" data-identity-copy="2" hidden>Find the next check.<br><span>A clear direction. The technician stays in control.</span></p>
-<span class="identity-direction" aria-hidden="true">↗</span>
-</div></div>
-<div class="hero-baseline mono"><span>EARLY TECHNICAL PROTOTYPE</span><span>CONCEIVED IN STOCKHOLM</span><a href="#explore">SCROLL TO EXPLORE ↓</a></div></section>
-<section class="proof-counter wrap" aria-labelledby="diagnostic-counter-title" data-diagnostic-proof data-stage="0">
-<div class="proof-counter-frame">
-<div class="proof-orbit" aria-hidden="true"><i></i><i></i><i></i><b></b><span></span><span></span></div>
-<div class="proof-counter-heading"><p class="eyebrow"><span class="signal-dot"></span> WORKSHOP DIAGNOSTICS</p><p class="mono">GLOBAL / ALL DEVICES</p></div>
-<div class="proof-counter-body">
-<p class="proof-counter-reading" aria-live="polite" aria-busy="false"><strong data-historical-count="12" data-diagnostic-counter data-endpoint="https://orvect-api.onrender.com/api/public/metrics">12</strong><span id="diagnostic-counter-title">DIAGNOSTICS ANALYZED</span></p>
-<p class="proof-counter-copy">Includes 12 historical workshop diagnostics completed before automatic tracking.<br><span>New diagnostics are counted after their first successful analysis.</span></p>
-</div>
-<div class="proof-story" aria-label="Diagnostic signal progression"><ol><li class="is-current"><b>01</b><span>LIVE SIGNAL</span></li><li><b>02</b><span>FIRST ANALYSIS</span></li><li><b>03</b><span>SHARED LEARNING</span></li></ol><p class="mono">SCROLL TO TRACE THE SIGNAL <span aria-hidden="true">↓</span></p></div>
-</div>
-</section>
-<section id="explore" class="blueprint-sequence" aria-labelledby="blueprint-title">
-<div class="blueprint-stage">
-<div class="blueprint-top"><span class="mono">ORVECT / VEHICLE INTELLIGENCE</span><button class="experience-toggle" type="button" aria-pressed="false">Pause effects</button></div>
-<canvas class="vehicle-canvas" aria-hidden="true"></canvas>
-<div class="blueprint-copy"><p class="eyebrow">LOOK BENEATH THE SURFACE</p><h2 id="blueprint-title">Every signal.<br><em>A bigger picture.</em></h2><p>Explore the connections between the vehicle, its systems and the evidence.</p></div>
-<div class="blueprint-footer"><div class="blueprint-readout"><span><b>01 / CONTEXT</b><span>Vehicle configuration</span></span><span><b>02 / EVIDENCE</b><span>Connected signals</span></span><span><b>03 / CLARITY</b><span>Human judgement</span></span></div><div><p class="mono">CONCEPT VISUALISATION · SCROLL TO EXPLORE</p><div class="sequence-progress" aria-hidden="true"><i></i></div></div></div>
-</div></section>
-<section class="signal-experience" aria-labelledby="signal-title" data-scroll-climax><div class="signal-stage"><p class="eyebrow">YOUR DIAGNOSIS, STEP BY STEP</p><h2 id="signal-title">Test. Confirm.<br><em>Move forward.</em></h2><div class="voice-wave" aria-hidden="true"></div><p>A fault code can point to several causes. ORVECT combines vehicle context with your test results to progressively narrow the possibilities.<br><small>You test. ORVECT reassesses. You move forward.</small></p></div></section>
-<section id="contact" class="contact section" data-scroll-climax><div class="contact-stage"><div class="wrap"><p class="eyebrow">INVESTORS. WORKSHOPS. DATA PROVIDERS.</p><h2>Let's move<br>diagnostics<br><em>forward.</em></h2><div class="contact-row"><p>From information to the next decision.<br>Know which path to check first.</p><a class="button contact-cta" href="mailto:nolann.orvect@gmail.com?subject=ORVECT%20%E2%80%94%20Let%27s%20talk">Start a conversation <span aria-hidden="true">↗</span></a></div><div class="contact-progress mono" aria-hidden="true"><span>ORVECT / NEXT</span><i></i><span>01—01</span></div></div></div></section>
+  <section class="intro" data-intro aria-labelledby="hero-title">
+    <div class="stage">
+      <div class="lockup">
+        <h1 id="hero-title" class="wordmark" data-text="ORVECT">ORVECT<span class="sr-only"> — Au-delà du code défaut.</span></h1>
+      </div>
+      <div class="layers" aria-hidden="true">
+        <span class="layer"><span class="skew"><i class="fill"></i></span></span>
+        <span class="layer"><span class="skew"><i class="fill"></i></span></span>
+        <span class="layer"><span class="skew"><i class="fill"></i></span></span>
+      </div>
+      <figure class="product">
+        <div class="shot-frame"><img src="v2/assets/program-fr.png" width="1440" height="960" alt="Écran d’identification du véhicule dans l’atelier ORVECT : saisie par VIN, par plaque ou manuelle, et étapes Identification, Vérification, DTC et symptômes, Résultats."></div>
+        <figcaption>L’atelier ORVECT aujourd’hui. Capture réelle, données de démonstration synthétiques.</figcaption>
+      </figure>
+      <p class="cue" aria-hidden="true"><span></span></p>
+    </div>
+  </section>
+
+  <section class="method-sec wrap" aria-labelledby="method-title">
+    <div class="section-head rise" data-reveal>
+      <h2 id="method-title">Un code ouvre une question. <span>La méthode construit la réponse.</span></h2>
+      <p>ORVECT réévalue le dossier après chaque contrôle : ce que vous mesurez change ce qu’il vous propose ensuite.</p>
+    </div>
+    <ol class="method-steps" data-reveal>
+      <li><svg class="step-mark" viewBox="0 0 120 100" aria-hidden="true"><path d="M8 76 29 24h19L27 76Z"/><path d="M41 76 70 4h19L60 76Z"/><path d="M74 76 95 24h19L93 76Z"/></svg><h3>Contexte</h3><p>Partir du véhicule. Sa configuration donne son sens à chaque signal ; une correspondance incertaine reste incertaine.</p></li>
+      <li><svg class="step-mark" viewBox="0 0 120 100" aria-hidden="true"><path d="M8 76 29 24h19L27 76Z"/><path d="M41 76 70 4h19L60 76Z"/><path d="M74 76 95 24h19L93 76Z"/></svg><h3>Preuves</h3><p>Relier codes, mesures et sources, pour et contre chaque cause. Une définition indisponible est signalée comme telle.</p></li>
+      <li><svg class="step-mark" viewBox="0 0 120 100" aria-hidden="true"><path d="M8 76 29 24h19L27 76Z"/><path d="M41 76 70 4h19L60 76Z"/><path d="M74 76 95 24h19L93 76Z"/></svg><h3>Clarté</h3><p>Identifier le prochain contrôle et expliquer pourquoi. La décision reste celle du technicien.</p></li>
+    </ol>
+  </section>
+
+  <section class="vehicle band-dark" data-vehicle aria-labelledby="vehicle-title">
+    <div class="vehicle-stage">
+      <canvas aria-hidden="true"></canvas>
+      <div class="vehicle-copy wrap">
+        <h2 id="vehicle-title">Chaque signal. <span>Une vue d’ensemble.</span></h2>
+        <p>Explorez les liens entre le véhicule, ses systèmes et les preuves.</p>
+      </div>
+      <div class="vehicle-progress wrap" aria-hidden="true"><i></i></div>
+    </div>
+  </section>
+
+  <section class="proof band-dark" data-proof aria-labelledby="proof-title">
+    <div class="proof-stage">
+      <div class="wrap proof-grid">
+        <div class="proof-copy">
+          <p class="proof-num" aria-hidden="true"><strong data-proof-count data-historical="28" data-endpoint="https://orvect-api.onrender.com/api/public/metrics">40</strong></p>
+          <h2 id="proof-title"><span class="sr-only" data-proof-sr>40 </span>diagnostics analysés par ORVECT.</h2>
+          <p class="proof-note">Dont 28 enregistrés hors suivi automatique. Chaque nouveau diagnostic est compté après sa première analyse réussie.</p>
+        </div>
+        <svg class="proof-mark" viewBox="0 0 120 100" aria-hidden="true"><path d="M8 76 29 24h19L27 76Z"/><path d="M41 76 70 4h19L60 76Z"/><path d="M74 76 95 24h19L93 76Z"/></svg>
+      </div>
+    </div>
+  </section>
+
+  <section class="io wrap" aria-labelledby="io-title" data-reveal>
+    <div class="section-head">
+      <h2 id="io-title">Ce que vous lui donnez. Ce qu’il vous rend.</h2>
+      <p>Des données d’atelier en entrée. Une direction argumentée en sortie.</p>
+    </div>
+    <div class="io-grid">
+      <ul class="chips chips-in" aria-label="Ce que vous donnez">
+        <li>VIN ou plaque</li><li>Codes défauts confirmés</li><li>Symptômes</li><li>Mesures</li><li>Photos</li>
+      </ul>
+      <div class="io-mark" aria-hidden="true">
+        <svg viewBox="0 0 120 100"><path d="M8 76 29 24h19L27 76Z"/><path d="M41 76 70 4h19L60 76Z"/><path d="M74 76 95 24h19L93 76Z"/></svg>
+        <i></i>
+      </div>
+      <ul class="chips chips-out" aria-label="Ce qu’ORVECT rend">
+        <li>Causes probables, classées</li><li>Éléments pour et contre</li><li>Sources de chaque définition</li><li class="next">Le prochain contrôle</li>
+      </ul>
+    </div>
+    <dl class="facts">
+      <div><dt>Périmètre</dt><dd>Groupe Volkswagen d’abord : VW, Audi, Škoda, SEAT, CUPRA, VW Utilitaires.</dd></div>
+      <div><dt>Statut</dt><dd>Prototype technique, bêta ouverte aux ateliers.</dd></div>
+    </dl>
+  </section>
+
+  <section class="limits" aria-labelledby="limits-title">
+    <div class="wrap limits-grid">
+      <div class="section-head" data-reveal>
+        <h2 id="limits-title">Ce qu’ORVECT ne fera jamais.</h2>
+        <p>Ces limites sont tenues par du code exécuté après la réponse du modèle, pas seulement par des consignes.</p>
+      </div>
+      <ul class="never" data-reveal>
+        <li>Confirmer définitivement une panne.</li>
+        <li>Prescrire le remplacement d’une pièce.</li>
+        <li>Déclarer un véhicule apte ou inapte à rouler.</li>
+        <li>Inventer une définition de code. Sans source fiable, ORVECT s’abstient et le dit.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="cases wrap" aria-labelledby="cases-title">
+    <figure class="shot" data-reveal>
+      <div class="shot-frame"><img src="v2/assets/collection-fr.png" width="1440" height="960" loading="lazy" alt="Formulaire ORVECT « Documenter un cas atelier » : marque, modèle, code moteur, code boîte, kilométrage, puis symptômes observés."></div>
+      <figcaption>Collecte de cas atelier. Capture réelle.</figcaption>
+    </figure>
+    <div class="section-head">
+      <h2 id="cases-title">Chaque panne résolue rend le suivant plus juste.</h2>
+      <p>Les ateliers documentent leurs cas en quelques minutes. ORVECT s’appuie sur l’expérience accumulée sur des véhicules comparables, sans jamais la confondre avec une preuve.</p>
+    </div>
+  </section>
+
+  <section class="doors wrap" id="fondateurs" aria-labelledby="doors-title">
+    <h2 id="doors-title" class="sr-only">Deux façons d’avancer avec ORVECT</h2>
+    <div class="door" data-reveal>
+      <h3>Vous êtes un atelier ou un technicien</h3>
+      <p>Testez ORVECT sur vos cas réels pendant la bêta et aidez-nous à l’ajuster aux réalités de l’atelier. Priorité aux véhicules du groupe Volkswagen.</p>
+      <a class="btn btn-primary" href="beta.html">Rejoindre la bêta <svg aria-hidden="true" viewBox="0 0 16 16"><path d="M5 11 11 5M6 5h5v5"/></svg></a>
+    </div>
+    <div class="door" data-reveal>
+      <h3>Vous êtes investisseur ou partenaire</h3>
+      <p>Parlez directement à Nolann Petri, fondateur et CEO : la méthode, les données, la feuille de route.</p>
+      <ul class="founders">
+        <li><b>Nolann Petri</b><span>Fondateur &amp; CEO · Stockholm</span></li>
+        <li><b>Lesly Hesse</b><span>Cofondateur, opérations techniques · France</span></li>
+      </ul>
+      <a class="btn btn-ghost" href="mailto:nolann.orvect@gmail.com?subject=ORVECT">Écrire à Nolann</a> <a class="text-more" href="vision.html#equipe">Voir l’équipe</a>
+    </div>
+  </section>
 </main>
-<footer class="wrap"><div class="footer-top"><a class="brand" href="#page-top" aria-label="ORVECT back to top"><img src="v1/assets/orvect-mark.svg" alt="ORVECT logo" width="37" height="36">ORVECT</a><p>Automotive intelligence.<br>Grounded in evidence.</p><a href="mailto:nolann.orvect@gmail.com">nolann.orvect@gmail.com ↗</a></div><div class="footer-bottom mono"><span>© 2026 NOLANN PETRI / ORVECT BRAND CONCEPT</span><span>PUBLIC PROTOTYPE PREVIEW</span><a href="#page-top">BACK TO TOP ↑</a></div></footer>
-</body></html>
+
+<footer class="site-footer">
+  <div class="wrap footer-grid">
+    <a class="brand" href="index.html"><img src="v1/assets/orvect-mark.svg" alt="" width="30" height="25">ORVECT</a>
+    <p>L’intelligence automobile, ancrée dans les faits.</p>
+    <a href="mailto:nolann.orvect@gmail.com">nolann.orvect@gmail.com</a>
+    <div class="fine">
+      <p>© 2026 ORVECT · Prototype technique · Aucune affiliation avec un constructeur.</p>
+      <nav class="legal-links" aria-label="Informations légales"><a href="legal.html#mentions">Mentions légales</a><a href="legal.html#confidentialite">Confidentialité</a><a href="legal.html#cookies">Cookies</a><button type="button" class="linklike" data-consent-open>Gérer les cookies</button></nav>
+    </div>
+  </div>
+</footer>
+</body>
+</html>
