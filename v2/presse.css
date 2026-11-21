@@ -35,3 +35,8 @@
 .swatches b{color:var(--ink);font-weight:600}
 .type-sample{font-size:clamp(28px,3.4vw,48px);letter-spacing:-.03em;color:var(--ink)!important;margin-top:8px}
 .kit-contact{padding-bottom:24px}
+
+/* Visitors reading another language than French see the English visuals first. */
+.visual-sets{display:flex;flex-direction:column;gap:clamp(32px,4vh,48px)}
+.visual-set h3{font-size:18px;font-weight:600;margin-bottom:4px}
+html:not([lang=fr]) .visual-set.en{order:-1}
