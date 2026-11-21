@@ -1,0 +1,37 @@
+/* V2 — Kit presse : des visuels à voir et à télécharger. */
+.kit{padding-block:clamp(64px,10vh,120px)}
+.kit-head{display:grid;gap:16px;max-width:860px;padding-bottom:40px;border-bottom:2px solid var(--ink)}
+.kit-k{font-size:13px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--accent-ink)}
+.kit-head h1{font-size:clamp(44px,6vw,92px);line-height:.95;letter-spacing:-.045em}
+.kit-head p{color:var(--ink-2);max-width:62ch}
+.kit-head nav{display:flex;flex-wrap:wrap;gap:10px 24px;font-size:15px}
+.kit-head nav a{text-underline-offset:4px;text-decoration-color:var(--line)}
+.kit section{padding-top:clamp(56px,8vh,96px);display:grid;gap:16px;scroll-margin-top:calc(var(--header) + 24px)}
+.kit h2{font-size:clamp(28px,2.8vw,40px);letter-spacing:-.03em}
+.kit section>p{color:var(--ink-2);max-width:68ch}
+.kit a{text-underline-offset:3px}
+
+.kit-grid{display:grid;gap:clamp(16px,2vw,24px);margin-top:12px}
+.kit-grid.logos{grid-template-columns:repeat(auto-fill,minmax(min(100%,300px),1fr))}
+.kit-grid.visuals{grid-template-columns:repeat(auto-fill,minmax(min(100%,240px),1fr));align-items:start}
+.kit-grid.product{grid-template-columns:repeat(auto-fill,minmax(min(100%,420px),1fr))}
+.kit-grid.people{grid-template-columns:repeat(auto-fill,minmax(min(100%,340px),1fr));align-items:start}
+
+.kit-item{margin:0;display:grid;gap:10px}
+.kit-frame{border:1px solid var(--line);border-radius:4px;overflow:hidden;background:var(--paper-2)}
+.kit-frame img{display:block;width:100%;height:auto}
+.logos .kit-frame{aspect-ratio:16/9;display:grid;place-items:center;padding:24px}
+.logos .kit-frame img{max-height:100%;width:auto;max-width:100%;object-fit:contain}
+.logos .on-dark .kit-frame{background:var(--ink);border-color:var(--ink)}
+.logos .on-light .kit-frame{background:var(--paper)}
+.people .portrait{grid-row:span 2}
+.kit-item figcaption{display:flex;justify-content:space-between;gap:12px;font-size:14px;color:var(--ink-2)}
+.kit-dl{display:flex;gap:12px;flex-shrink:0;font-weight:600}
+.kit-dl a{color:var(--accent-ink)}
+
+.swatches{list-style:none;margin:12px 0 0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,200px),1fr));gap:16px}
+.swatches li{display:grid;gap:4px;padding-top:96px;position:relative;font-size:14px;color:var(--ink-2)}
+.swatches li::before{content:"";position:absolute;inset:0 0 auto;height:84px;border-radius:4px;background:var(--c);border:1px solid var(--line)}
+.swatches b{color:var(--ink);font-weight:600}
+.type-sample{font-size:clamp(28px,3.4vw,48px);letter-spacing:-.03em;color:var(--ink)!important;margin-top:8px}
+.kit-contact{padding-bottom:24px}
