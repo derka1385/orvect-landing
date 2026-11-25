@@ -419,7 +419,6 @@
 "L’app Mac et le site":["The Mac app and the website", "Die Mac-App und die Website", "Mac-appen och webbplatsen"],
 "Les mêmes dossiers, où que vous travailliez.":["The same cases, wherever you work.", "Dieselben Fälle, wo immer Sie arbeiten.", "Samma ärenden, var du än arbetar."],
 "Quatre langues":["Four languages", "Vier Sprachen", "Fyra språk"],
-"Français, anglais, allemand et suédois.":["French, English, German and Swedish.", "Französisch, Englisch, Deutsch und Schwedisch.", "Franska, engelska, tyska och svenska."],
 "Questions fréquentes":["Frequently asked questions", "Häufige Fragen", "Vanliga frågor"],
 "Qu’est-ce qui compte comme un diagnostic ?":["What counts as a diagnostic?", "Was zählt als Diagnose?", "Vad räknas som en diagnos?"],
 "Un dossier véhicule analysé. Les relances après un contrôle sur le même dossier sont comprises.":["One vehicle case analysed. Follow-ups after a check on the same case are included.", "Ein analysierter Fahrzeugfall. Folgeanalysen nach einer Prüfung im selben Fall sind inklusive.", "Ett analyserat fordonsärende. Uppföljningar efter en kontroll i samma ärende ingår."],
@@ -463,7 +462,16 @@
 "Testez ORVECT sur vos cas réels.":["Try ORVECT on your real cases.", "Testen Sie ORVECT an Ihren echten Fällen.", "Testa ORVECT på era verkliga ärenden."],
 "49 €":["49 €", "49 €", "549 kr"],
 "129 €":["129 €", "129 €", "1 449 kr"],
-"249 €":["249 €", "249 €", "2 799 kr"]
+"249 €":["249 €", "249 €", "2 799 kr"],
+"Soit 0,49 € par diagnostic":["That is €0.49 per diagnostic", "Also 0,49 € pro Diagnose", "Alltså 5,49 kr per diagnos"],
+"Soit 0,43 € par diagnostic":["That is €0.43 per diagnostic", "Also 0,43 € pro Diagnose", "Alltså 4,83 kr per diagnos"],
+"Soit 0,31 € par diagnostic":["That is €0.31 per diagnostic", "Also 0,31 € pro Diagnose", "Alltså 3,50 kr per diagnos"],
+"Relances comprises":["Follow-ups included", "Folgeanalysen inklusive", "Uppföljningar ingår"],
+"Pistes chiffrées et prochain contrôle":["Ranked leads and next check", "Gewichtete Ansätze und nächste Prüfung", "Rangordnade spår och nästa kontroll"],
+"Sources citées":["Cited sources", "Zitierte Quellen", "Angivna källor"],
+"App Mac et site":["Mac app and website", "Mac-App und Website", "Mac-app och webbplats"],
+"0,50 € HT par diagnostic en plus":["€0.50 excl. VAT per extra diagnostic", "0,50 € zzgl. MwSt. je weitere Diagnose", "6 kr exkl. moms per extra diagnos"],
+"L’app Mac, le site et les rapports en français, anglais, allemand et suédois.":["The Mac app, the website and the reports in French, English, German and Swedish.", "Mac-App, Website und Berichte auf Französisch, Englisch, Deutsch und Schwedisch.", "Mac-appen, webbplatsen och rapporterna på franska, engelska, tyska och svenska."]
 };
   const LANGS = ['fr', 'en', 'de', 'sv'], KEY = 'orvect-lang', root = document.documentElement;
   let lang = 'fr';

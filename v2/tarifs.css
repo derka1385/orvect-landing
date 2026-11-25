@@ -6,7 +6,7 @@
 .pricing-head p:last-child{color:var(--ink-2);max-width:62ch}
 
 .plans{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(12px,1.6vw,20px);margin-top:clamp(40px,6vh,64px);align-items:stretch}
-.plan{position:relative;display:grid;grid-template-rows:auto auto 1fr auto auto;gap:14px;padding:clamp(24px,2.6vw,36px);border:1px solid var(--line);background:#fbfaf7}
+.plan{position:relative;display:grid;grid-template-rows:auto auto auto auto 1fr auto;gap:14px;padding:clamp(24px,2.6vw,36px);border:1px solid var(--line);background:#fbfaf7}
 .plan h2{font-size:clamp(26px,2.4vw,34px)}
 .plan-for{color:var(--ink-2);font-size:16px}
 .plan-price{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;padding-top:18px;border-top:1px solid var(--line)}
@@ -43,3 +43,10 @@
 .demo-band p{max-width:60ch;color:var(--ink-2)}
 .demo-band p b{color:var(--ink);font-weight:600}
 @media (max-width:560px){.demo-band .btn{width:100%;justify-content:center}}
+
+.plan-list{list-style:none;margin:0 0 8px;padding:16px 0 0;border-top:1px solid var(--line);display:grid;gap:9px;align-content:start;font-size:15px}
+.plan-list li{position:relative;padding-left:24px}
+.plan-list li::before{content:"";position:absolute;left:2px;top:.5em;width:10px;height:5px;border-left:2px solid var(--accent-ink);border-bottom:2px solid var(--accent-ink);transform:rotate(-45deg)}
+.plan-main .plan-list{border-color:var(--line-dark)}
+.plan-main .plan-list li::before{border-color:var(--accent)}
+.plan-list li:first-child{font-weight:600}
