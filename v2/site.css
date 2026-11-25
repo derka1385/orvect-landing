@@ -37,6 +37,9 @@ p{margin:0}
 /* Header: transparent on arrival, full bar at rest, detached bar while reading down */
 /* ponytail: the header scrolls away with the page for now (2026-11); position:sticky;top:0 brings the fixed bar back. */
 .site-header{position:relative;z-index:50;height:var(--header)}
+/* Home: hidden during the opening animation, then back at the top of the screen once the product shows. */
+body:has(.intro-live) .site-header{position:sticky;top:0}
+.intro-active .site-header:not(:focus-within){transform:translateY(-110%);opacity:0;pointer-events:none}
 .site-header{transition:transform .5s var(--ease),opacity .35s}
 .site-header .bar{position:relative;height:100%;max-width:calc(var(--max) + 2 * var(--gutter));margin-inline:auto;padding-inline:var(--gutter);display:flex;align-items:center;gap:clamp(16px,2.2vw,32px);transition:padding .45s var(--ease)}
 .site-header::before{content:"";position:absolute;inset:0;background:var(--ink);border-bottom:1px solid var(--line-dark);transition:inset .45s var(--ease),border-radius .45s var(--ease),box-shadow .45s var(--ease),background-color .3s,border-color .3s,opacity .4s}
