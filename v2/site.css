@@ -47,7 +47,7 @@ p{margin:0}
 .brand{display:inline-flex;align-items:center;gap:9px;font-weight:700;font-size:22px;letter-spacing:-.04em;text-decoration:none;color:var(--on-dark);transition:opacity .4s}
 .brand img{width:28px;height:auto}
 .site-header nav{display:flex;gap:28px;margin-left:auto;font-size:15px}
-.site-header nav a{text-decoration:none;color:var(--on-dark-2);padding-block:6px;border-bottom:1px solid transparent;transition:color .2s,border-color .2s}
+.site-header nav a{text-decoration:none;white-space:nowrap;color:var(--on-dark-2);padding-block:6px;border-bottom:1px solid transparent;transition:color .2s,border-color .2s}
 .site-header nav a:hover{color:var(--on-dark);border-bottom-color:var(--on-dark-2)}
 .menu-toggle{display:none}
 /* Language: a native select, codes only so it reads the same in every language */
@@ -121,7 +121,7 @@ figcaption{margin-top:12px;font-size:14px;color:var(--ink-2)}
 .site-footer .legal-links a{color:var(--on-dark-2)}
 .site-footer .legal-links a:hover{color:var(--on-dark)}
 
-@media(max-width:760px){
+@media(max-width:900px){
   :root{--header:64px}
   .site-header nav,.site-header .bar>.btn{display:none}
   .site-header .bar{column-gap:10px}

@@ -1,0 +1,40 @@
+/* V2 — Tarifs : trois formules côte à côte, la formule Atelier en encre ; ce qui est compris, puis les questions. */
+.pricing{padding-block:clamp(64px,10vh,120px)}
+.pricing-head{display:grid;gap:16px;max-width:860px;padding-bottom:40px;border-bottom:2px solid var(--ink)}
+.pricing-k{font-size:13px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--accent-ink)}
+.pricing-head h1{font-size:clamp(44px,6vw,92px);line-height:.95;letter-spacing:-.045em}
+.pricing-head p:last-child{color:var(--ink-2);max-width:62ch}
+
+.plans{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(12px,1.6vw,20px);margin-top:clamp(40px,6vh,64px);align-items:stretch}
+.plan{position:relative;display:grid;grid-template-rows:auto auto 1fr auto auto;gap:14px;padding:clamp(24px,2.6vw,36px);border:1px solid var(--line);background:#fbfaf7}
+.plan h2{font-size:clamp(26px,2.4vw,34px)}
+.plan-for{color:var(--ink-2);font-size:16px}
+.plan-price{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;padding-top:18px;border-top:1px solid var(--line)}
+.plan-price b{font-size:clamp(44px,4.6vw,64px);font-weight:500;letter-spacing:-.04em;line-height:1;font-variant-numeric:tabular-nums}
+.plan-price span,.plan-quota span{color:var(--ink-2);font-size:15px}
+.plan-quota{display:flex;align-items:baseline;gap:8px;margin-bottom:10px}
+.plan-quota b{font-size:22px;font-weight:600;font-variant-numeric:tabular-nums}
+.plan .btn{justify-content:center}
+.plan-main{background:var(--ink);color:var(--on-dark);border-color:var(--ink)}
+.plan-main .plan-for,.plan-main .plan-price span,.plan-main .plan-quota span{color:var(--on-dark-2)}
+.plan-main .plan-price{border-color:var(--line-dark)}
+.plan-main .plan-quota b{color:var(--accent)}
+.plan-main .btn-primary:hover{background:var(--on-dark);color:var(--ink)}
+.plan-tag{position:absolute;top:0;right:clamp(24px,2.6vw,36px);transform:translateY(-50%);padding:5px 10px;background:var(--accent);color:var(--ink);font-size:13px;font-weight:600;letter-spacing:.04em}
+.plans-extra{margin-top:20px;color:var(--ink-2);font-size:16px}
+.plans-extra b{color:var(--ink);font-weight:600}
+
+.included,.faq{padding-top:clamp(56px,8vh,96px);display:grid;gap:24px}
+.included h2,.faq h2{font-size:clamp(28px,2.8vw,40px);letter-spacing:-.03em}
+.included ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,320px),1fr));gap:0 clamp(24px,3vw,48px);border-top:1px solid var(--line)}
+.included li{padding:20px 0;border-bottom:1px solid var(--line);color:var(--ink-2);font-size:16px}
+.included li b{display:block;color:var(--ink);font-weight:600;font-size:17px;margin-bottom:4px}
+.faq dl{margin:0;display:grid;border-top:1px solid var(--line);max-width:860px}
+.faq dl>div{padding:20px 0;border-bottom:1px solid var(--line)}
+.faq dt{font-weight:600}
+.faq dd{margin:6px 0 0;color:var(--ink-2);max-width:68ch}
+
+@media (max-width:860px){
+  .plans{grid-template-columns:1fr;gap:28px}
+  .plan{grid-template-rows:none}
+}
