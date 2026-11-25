@@ -20,7 +20,7 @@
 figcaption{margin-top:12px;font-size:14px;color:var(--ink-2)}
 .cue{display:none}
 
-.intro-live{height:200svh;padding:0;margin-top:calc(-1 * var(--header))}
+.intro-live{height:150svh;padding:0;margin-top:calc(-1 * var(--header))}
 .intro-live .stage{position:sticky;top:0;height:100svh;overflow:hidden;display:block;max-width:none}
 .intro-live .lockup,.intro-live .product,.intro-live .layer{position:absolute;left:0;top:0;will-change:transform,opacity}
 .intro-live .lockup{width:100%}
@@ -28,6 +28,10 @@ figcaption{margin-top:12px;font-size:14px;color:var(--ink-2)}
 .intro-live .layer{width:var(--sw);height:var(--h);z-index:1}
 .intro-live .product{left:50%}
 .intro-live .cue{display:flex;flex-direction:column;align-items:center;gap:10px;position:absolute;left:50%;bottom:28px;transform:translateX(-50%);margin:0;font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-2);animation:fade-up 1s var(--ease) 2.2s backwards}
+.intro-live .cue{z-index:2;padding:0;border:0;background:none;font:inherit;color:var(--ink);cursor:pointer}
+.intro-live .cue svg{box-sizing:content-box;width:22px;height:22px;padding:13px;border:1.5px solid var(--ink);border-radius:50%;fill:none;stroke:currentColor;stroke-width:1.8;animation:cue-bob 1.8s ease-in-out infinite;transition:background-color .2s,color .2s}
+.intro-live .cue:hover svg,.intro-live .cue:focus-visible svg{background:var(--ink);color:var(--paper)}
+@keyframes cue-bob{0%,100%{transform:translateY(0)}50%{transform:translateY(5px)}}
 .intro-live .cue span{width:1px;height:40px;background:linear-gradient(var(--ink-2) 50%,transparent 50%);background-size:1px 80px;animation:cue 1.8s ease-in-out infinite}
 @keyframes cue{from{background-position:0 -40px}to{background-position:0 40px}}
 /* Arrival: the loading pulse of the ORVECT mark (same as the opening signature), then the name glitches in.
@@ -184,7 +188,7 @@ figcaption{margin-top:12px;font-size:14px;color:var(--ink-2)}
 @media(max-width:760px){
   .vehicle{height:200svh}
   .vehicle-copy{top:14%}
-  .intro-live{height:180svh}
+  .intro-live{height:140svh}
   .facts{grid-template-columns:1fr}
   .facts>div,.facts>div+div{padding:16px 0 12px;border-left:0}
   .doors{grid-template-columns:1fr;gap:48px}

@@ -430,7 +430,8 @@
 "Réserver une démo":["Book a demo", "Demo buchen", "Boka en demo"],
 "Démo":["Demo", "Demo", "Demo"],
 "Vous hésitez entre deux formules ?":["Torn between two plans?", "Unsicher zwischen zwei Tarifen?", "Osäker mellan två planer?"],
-"Montrez-nous un de vos dossiers : nous le passons dans ORVECT ensemble.":["Show us one of your cases: we run it through ORVECT together.", "Zeigen Sie uns einen Ihrer Fälle: Wir gehen ihn gemeinsam in ORVECT durch.", "Visa oss ett av era ärenden: vi kör det genom ORVECT tillsammans."]
+"Montrez-nous un de vos dossiers : nous le passons dans ORVECT ensemble.":["Show us one of your cases: we run it through ORVECT together.", "Zeigen Sie uns einen Ihrer Fälle: Wir gehen ihn gemeinsam in ORVECT durch.", "Visa oss ett av era ärenden: vi kör det genom ORVECT tillsammans."],
+"Passer l’introduction":["Skip the introduction", "Einführung überspringen", "Hoppa över introduktionen"]
 };
   const LANGS = ['fr', 'en', 'de', 'sv'], KEY = 'orvect-lang', root = document.documentElement;
   let lang = 'fr';

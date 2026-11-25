@@ -91,6 +91,7 @@ if (intro && !reduced.matches) {
     lockup.style.transform = `translate3d(0,${logoBottom + 28 - s * 30}px,0)`;
     lockup.style.opacity = 1 - s;
     cue.style.opacity = Math.max(0, 1 - s * 1.6);
+    cue.style.visibility = s > .6 ? 'hidden' : '';
     const open = [-(pw / 2 + 24 + 40 * u) - (8 - 60) * u, 0, pw / 2 + 24 - (74 - 60) * u];   // extra x so each side stroke clears the product edge
     strokes.forEach((el, i) => {
       const x = cx + (LOGO[i].x - 60) * u + open[i] * a;
@@ -109,7 +110,17 @@ if (intro && !reduced.matches) {
     if (Math.abs(target - current) < .0005) current = target; else raf = requestAnimationFrame(tick);
     render(current);
   };
-  addEventListener('scroll', () => { read(); if (!raf) raf = requestAnimationFrame(tick); }, {passive:true});
+  // Leaving the intro takes one gesture: the arrow skips it, and a downward scroll that stops halfway finishes it.
+  const end = () => intro.offsetTop + intro.offsetHeight - innerHeight;
+  const skip = () => scrollTo({top:end(), behavior:'smooth'});
+  cue.addEventListener('click', skip);
+  let lastY = scrollY, idle = 0;
+  addEventListener('scroll', () => {
+    read(); if (!raf) raf = requestAnimationFrame(tick);
+    const down = scrollY > lastY; lastY = scrollY;
+    clearTimeout(idle);
+    if (down && target > .02 && target < .98) idle = setTimeout(skip, 160);
+  }, {passive:true});
   // Re-measure whenever the stage or the lockup changes size (resize, zoom, late font): no stale positions.
   const ro = new ResizeObserver(() => { measure(); read(); current = target; render(current); });
   ro.observe(stage); ro.observe(lockup);
