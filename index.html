@@ -8,8 +8,8 @@
 <title>ORVECT — Au-delà du code défaut.</title>
 <link rel="icon" href="favicon.ico" sizes="48x48"><link rel="icon" href="favicon.svg" type="image/svg+xml"><link rel="icon" href="icon-192.png" type="image/png" sizes="192x192"><link rel="apple-touch-icon" href="apple-touch-icon.png"><link rel="manifest" href="site.webmanifest">
 <link rel="preload" href="v1/assets/SpaceGrotesk.ttf" as="font" type="font/ttf" crossorigin>
-<link rel="stylesheet" href="v2/site.css?v=6"><link rel="stylesheet" href="v2/a.css?v=13">
-<script src="v2/i18n.js?v=6" defer></script><script src="v2/v2.js?v=14" defer></script><script src="v2/vehicle.js?v=1" defer></script>
+<link rel="stylesheet" href="v2/site.css?v=6"><link rel="stylesheet" href="v2/a.css?v=14">
+<script src="v2/i18n.js?v=7" defer></script><script src="v2/v2.js?v=14" defer></script><script src="v2/vehicle.js?v=1" defer></script>
 <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://orvect.fr/#org","name":"ORVECT","url":"https://orvect.fr/","logo":"https://orvect.fr/logo.png","founder":{"@type":"Person","@id":"https://orvect.fr/vision.html#nolann-petri","name":"Nolann Petri","image":"https://orvect.fr/v2/assets/nolann-petri-fondateur-orvect.jpg"}},{"@type":"WebSite","name":"ORVECT","url":"https://orvect.fr/","publisher":{"@id":"https://orvect.fr/#org"},"@id":"https://orvect.fr/#website","alternateName":["Orvect","ORVECT diagnostic automobile"],"inLanguage":"fr"},{"@type":"ItemList","@id":"https://orvect.fr/#navigation","name":"Navigation principale","itemListElement":[{"@type":"SiteNavigationElement","position":1,"name":"L’approche","url":"https://orvect.fr/approche.html"},{"@type":"SiteNavigationElement","position":2,"name":"Le prototype","url":"https://orvect.fr/prototype.html"},{"@type":"SiteNavigationElement","position":3,"name":"La vision","url":"https://orvect.fr/vision.html"},{"@type":"SiteNavigationElement","position":4,"name":"Rejoindre la bêta","url":"https://orvect.fr/beta.html"}]}]}</script>
 </head>
 <body>
@@ -81,6 +81,45 @@
         </div>
         <svg class="proof-mark" viewBox="0 0 120 100" aria-hidden="true"><path d="M8 76 29 24h19L27 76Z"/><path d="M41 76 70 4h19L60 76Z"/><path d="M74 76 95 24h19L93 76Z"/></svg>
       </div>
+    </div>
+  </section>
+
+  <section class="bench wrap" aria-labelledby="bench-title" data-reveal>
+    <div class="bench-grid">
+      <div class="bench-lead">
+        <p class="bench-num" aria-hidden="true"><strong>8</strong><span>/10</span></p>
+        <h2 id="bench-title">Dans 8 pannes sur 10, la bonne cause est parmi ses 3 premières pistes.</h2>
+        <p>Testé sur 408 pannes réelles du groupe Volkswagen, documentées avec leurs codes défaut, leurs symptômes et leurs causes connues. ORVECT ne prétend pas trouver du premier coup : il vous met vite sur la bonne voie.</p>
+      </div>
+      <dl class="bench-bars">
+        <div style="--v:.85"><dt>Bonne cause dans les 3 premières pistes</dt><dd>85 %</dd></div>
+        <div style="--v:.52"><dt>Bonne cause en première piste</dt><dd>52 %</dd></div>
+        <div style="--v:.92"><dt>Codes génériques (P0…), 3 premières pistes</dt><dd>92 %</dd></div>
+        <div style="--v:.81"><dt>Codes constructeur VAG, 3 premières pistes</dt><dd>81 %</dd></div>
+      </dl>
+    </div>
+    <p class="bench-note">Banc de test interne, novembre 2026. Chaque panne passe par le vrai parcours d’analyse, sur un véhicule de démonstration. Une cause générale comme le câblage ou le calculateur compte quand la documentation la cite ; sans elles, 63 %.</p>
+  </section>
+
+  <section class="cases wrap" aria-labelledby="mac-title">
+    <figure class="shot" data-reveal>
+      <div class="shot-frame"><img src="v2/assets/mac-analyse-fr.png" width="2760" height="1640" loading="lazy" alt="App ORVECT pour Mac : analyse d’un raté au cylindre 1 sur une Golf VII 1.4 TSI. Quatre hypothèses classées avec leur probabilité, de la bobine d’allumage à 75 % à une fuite d’air à 35 %, et le premier contrôle proposé."></div>
+      <figcaption>L’app ORVECT pour Mac. Capture réelle, véhicule de démonstration.</figcaption>
+    </figure>
+    <div class="section-head">
+      <h2 id="mac-title">Chaque piste, avec sa probabilité.</h2>
+      <p>Les causes possibles sont classées et chiffrées, avec les éléments pour et contre. Le premier contrôle est déjà choisi : celui qui départage le mieux les pistes.</p>
+    </div>
+  </section>
+
+  <section class="cases cases-flip wrap" aria-labelledby="check-title">
+    <figure class="shot" data-reveal>
+      <div class="shot-frame"><img src="v2/assets/mac-controle-fr.png" width="2760" height="1640" loading="lazy" alt="Étape Contrôles de l’app ORVECT pour Mac : inspecter visuellement la bobine d’allumage du cylindre 1, avec la durée estimée, les consignes de sécurité, la procédure et les outils."></div>
+      <figcaption>Le contrôle en cours, pas à pas. Capture réelle.</figcaption>
+    </figure>
+    <div class="section-head">
+      <h2 id="check-title">Le prochain contrôle, expliqué.</h2>
+      <p>Durée, sécurité, procédure, outils. Vous saisissez ce que vous avez réellement observé, et ORVECT réévalue les pistes.</p>
     </div>
   </section>
 
