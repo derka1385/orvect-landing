@@ -426,7 +426,11 @@
 "Que se passe-t-il si je dépasse mon quota ?":["What happens if I go over my quota?", "Was passiert, wenn ich mein Kontingent überschreite?", "Vad händer om jag går över min kvot?"],
 "Vos analyses continuent. Chaque diagnostic au-delà du quota est facturé 0,50 € HT.":["Your analyses keep running. Each diagnostic beyond the quota is billed at €0.50 excl. VAT.", "Ihre Analysen laufen weiter. Jede Diagnose über dem Kontingent wird mit 0,50 € zzgl. MwSt. berechnet.", "Dina analyser fortsätter. Varje diagnos utöver kvoten debiteras med 0,50 € exkl. moms."],
 "Combien de diagnostics me faut-il ?":["How many diagnostics do I need?", "Wie viele Diagnosen brauche ich?", "Hur många diagnoser behöver jag?"],
-"Comptez vos dossiers de diagnostic du mois, pas vos entretiens courants. Un atelier qui en ouvre 5 par jour ouvré en fait environ 100 par mois.":["Count your diagnostic cases for the month, not routine servicing. A workshop that opens 5 per working day does about 100 a month.", "Zählen Sie Ihre Diagnosefälle im Monat, nicht die Routinewartung. Eine Werkstatt mit 5 pro Arbeitstag kommt auf etwa 100 im Monat.", "Räkna månadens diagnosärenden, inte vanlig service. En verkstad som öppnar 5 per arbetsdag gör ungefär 100 i månaden."]
+"Comptez vos dossiers de diagnostic du mois, pas vos entretiens courants. Un atelier qui en ouvre 5 par jour ouvré en fait environ 100 par mois.":["Count your diagnostic cases for the month, not routine servicing. A workshop that opens 5 per working day does about 100 a month.", "Zählen Sie Ihre Diagnosefälle im Monat, nicht die Routinewartung. Eine Werkstatt mit 5 pro Arbeitstag kommt auf etwa 100 im Monat.", "Räkna månadens diagnosärenden, inte vanlig service. En verkstad som öppnar 5 per arbetsdag gör ungefär 100 i månaden."],
+"Réserver une démo":["Book a demo", "Demo buchen", "Boka en demo"],
+"Démo":["Demo", "Demo", "Demo"],
+"Vous hésitez entre deux formules ?":["Torn between two plans?", "Unsicher zwischen zwei Tarifen?", "Osäker mellan två planer?"],
+"Montrez-nous un de vos dossiers : nous le passons dans ORVECT ensemble.":["Show us one of your cases: we run it through ORVECT together.", "Zeigen Sie uns einen Ihrer Fälle: Wir gehen ihn gemeinsam in ORVECT durch.", "Visa oss ett av era ärenden: vi kör det genom ORVECT tillsammans."]
 };
   const LANGS = ['fr', 'en', 'de', 'sv'], KEY = 'orvect-lang', root = document.documentElement;
   let lang = 'fr';

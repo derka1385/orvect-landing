@@ -50,6 +50,11 @@ p{margin:0}
 .site-header nav a{text-decoration:none;white-space:nowrap;color:var(--on-dark-2);padding-block:6px;border-bottom:1px solid transparent;transition:color .2s,border-color .2s}
 .site-header nav a:hover{color:var(--on-dark);border-bottom-color:var(--on-dark-2)}
 .menu-toggle{display:none}
+.site-header .btn-ghost{border-color:var(--on-dark-2);color:var(--on-dark)}
+.site-header .btn-ghost:hover{background:var(--on-dark);color:var(--ink)}
+.site-header .bar>.btn-demo{margin-left:auto}
+.site-header nav+.btn-demo{margin-left:0}
+.demo-short{display:none}
 /* Language: a native select, codes only so it reads the same in every language */
 .lang-select{-webkit-appearance:none;appearance:none;height:36px;padding:0 28px 0 12px;border:1px solid var(--line-dark);border-radius:2px;background:transparent url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 6'%3E%3Cpath d='M1 1l4 4 4-4' fill='none' stroke='%23a9adb0' stroke-width='1.5'/%3E%3C/svg%3E") no-repeat right 10px center/10px 6px;color:var(--on-dark);font-family:inherit;font-size:14px;font-weight:600;letter-spacing:.04em;cursor:pointer;transition:border-color .2s}
 .lang-select:hover{border-color:var(--on-dark-2)}
@@ -121,9 +126,13 @@ figcaption{margin-top:12px;font-size:14px;color:var(--ink-2)}
 .site-footer .legal-links a{color:var(--on-dark-2)}
 .site-footer .legal-links a:hover{color:var(--on-dark)}
 
-@media(max-width:900px){
+@media(max-width:1080px){
   :root{--header:64px}
   .site-header nav,.site-header .bar>.btn{display:none}
+  .site-header .bar>.btn-demo{display:inline-flex;margin-left:auto;padding:0 14px}
+  .site-header .bar>.btn-demo .demo-long{display:none}
+  .site-header .bar>.btn-demo .demo-short{display:inline}
+  .site-header .bar>.btn-demo~.lang-select{margin-left:0}
   .site-header .bar{column-gap:10px}
   .lang-select{height:44px;margin-left:auto}
   .menu-toggle{display:inline-flex;flex-direction:column;justify-content:center;align-items:center;gap:6px;width:44px;height:44px;padding:0;border:1px solid var(--on-dark-2);border-radius:2px;background:transparent}
@@ -136,6 +145,11 @@ figcaption{margin-top:12px;font-size:14px;color:var(--ink-2)}
   .site-header.is-open nav{display:flex;flex-direction:column;gap:0;width:100%;order:3;margin:0;font-size:18px}
   .site-header.is-open nav a{padding:14px 0;border-bottom:1px solid var(--line-dark)}
   .site-header.is-open .bar>.btn{display:inline-flex;order:4}
+  .site-header.is-open .bar>.btn{flex:1 1 100%;justify-content:center;margin-left:0}
+  .site-header.is-open .bar>.btn-demo{order:5}
+  .site-header.is-open .bar>.btn-demo .demo-long{display:inline}
+  .site-header.is-open .bar>.btn-demo .demo-short{display:none}
+  .site-header.is-open .bar>.lang-select{margin-left:auto}
   .site-header.is-open .menu-toggle span:first-child{transform:translateY(3.75px) rotate(45deg)}
   .site-header.is-open .menu-toggle span:last-child{transform:translateY(-3.75px) rotate(-45deg)}
   .site-header.is-floating::before{inset:8px 10px}
