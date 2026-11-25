@@ -406,7 +406,7 @@
 "Pour un atelier de plusieurs techniciens.":["For a workshop with several technicians.", "Für eine Werkstatt mit mehreren Technikern.", "För en verkstad med flera tekniker."],
 "Pour un garage à fort volume ou plusieurs sites.":["For a high-volume garage or several sites.", "Für einen Betrieb mit hohem Aufkommen oder mehreren Standorten.", "För en verkstad med hög volym eller flera anläggningar."],
 "Au-delà du quota, chaque diagnostic supplémentaire est facturé":["Beyond the quota, each extra diagnostic is billed at", "Über das Kontingent hinaus wird jede weitere Diagnose mit", "Utöver kvoten debiteras varje extra diagnos med"],
-"0,50 € HT":["€0.50 excl. VAT", "0,50 € zzgl. MwSt. berechnet", "0,50 € exkl. moms"],
+"0,50 € HT":["€0.50 excl. VAT", "0,50 € zzgl. MwSt. berechnet", "6 kr exkl. moms"],
 "Dans chaque formule":["In every plan", "In jedem Tarif", "I varje plan"],
 "Des pistes classées et chiffrées":["Ranked leads with probabilities", "Gereihte Ansätze mit Wahrscheinlichkeiten", "Rangordnade spår med sannolikheter"],
 "Chaque cause possible, avec sa probabilité et les éléments pour et contre.":["Every possible cause, with its probability and the evidence for and against.", "Jede mögliche Ursache, mit ihrer Wahrscheinlichkeit und den Argumenten dafür und dagegen.", "Varje möjlig orsak, med sin sannolikhet och underlaget för och emot."],
@@ -424,7 +424,7 @@
 "Qu’est-ce qui compte comme un diagnostic ?":["What counts as a diagnostic?", "Was zählt als Diagnose?", "Vad räknas som en diagnos?"],
 "Un dossier véhicule analysé. Les relances après un contrôle sur le même dossier sont comprises.":["One vehicle case analysed. Follow-ups after a check on the same case are included.", "Ein analysierter Fahrzeugfall. Folgeanalysen nach einer Prüfung im selben Fall sind inklusive.", "Ett analyserat fordonsärende. Uppföljningar efter en kontroll i samma ärende ingår."],
 "Que se passe-t-il si je dépasse mon quota ?":["What happens if I go over my quota?", "Was passiert, wenn ich mein Kontingent überschreite?", "Vad händer om jag går över min kvot?"],
-"Vos analyses continuent. Chaque diagnostic au-delà du quota est facturé 0,50 € HT.":["Your analyses keep running. Each diagnostic beyond the quota is billed at €0.50 excl. VAT.", "Ihre Analysen laufen weiter. Jede Diagnose über dem Kontingent wird mit 0,50 € zzgl. MwSt. berechnet.", "Dina analyser fortsätter. Varje diagnos utöver kvoten debiteras med 0,50 € exkl. moms."],
+"Vos analyses continuent. Chaque diagnostic au-delà du quota est facturé 0,50 € HT.":["Your analyses keep running. Each diagnostic beyond the quota is billed at €0.50 excl. VAT.", "Ihre Analysen laufen weiter. Jede Diagnose über dem Kontingent wird mit 0,50 € zzgl. MwSt. berechnet.", "Dina analyser fortsätter. Varje diagnos utöver kvoten debiteras med 6 kr exkl. moms."],
 "Combien de diagnostics me faut-il ?":["How many diagnostics do I need?", "Wie viele Diagnosen brauche ich?", "Hur många diagnoser behöver jag?"],
 "Comptez vos dossiers de diagnostic du mois, pas vos entretiens courants. Un atelier qui en ouvre 5 par jour ouvré en fait environ 100 par mois.":["Count your diagnostic cases for the month, not routine servicing. A workshop that opens 5 per working day does about 100 a month.", "Zählen Sie Ihre Diagnosefälle im Monat, nicht die Routinewartung. Eine Werkstatt mit 5 pro Arbeitstag kommt auf etwa 100 im Monat.", "Räkna månadens diagnosärenden, inte vanlig service. En verkstad som öppnar 5 per arbetsdag gör ungefär 100 i månaden."],
 "Réserver une démo":["Book a demo", "Demo buchen", "Boka en demo"],
@@ -460,7 +460,10 @@
 "L’équipe":["The team", "Das Team", "Teamet"],
 "Les fondateurs d’ORVECT.":["ORVECT’s founders.", "Die Gründer von ORVECT.", "ORVECT:s grundare."],
 "Logos, visuels et photos.":["Logos, visuals and photos.", "Logos, Visuals und Fotos.", "Logotyper, bilder och foton."],
-"Testez ORVECT sur vos cas réels.":["Try ORVECT on your real cases.", "Testen Sie ORVECT an Ihren echten Fällen.", "Testa ORVECT på era verkliga ärenden."]
+"Testez ORVECT sur vos cas réels.":["Try ORVECT on your real cases.", "Testen Sie ORVECT an Ihren echten Fällen.", "Testa ORVECT på era verkliga ärenden."],
+"49 €":["49 €", "49 €", "549 kr"],
+"129 €":["129 €", "129 €", "1 449 kr"],
+"249 €":["249 €", "249 €", "2 799 kr"]
 };
   const LANGS = ['fr', 'en', 'de', 'sv'], KEY = 'orvect-lang', root = document.documentElement;
   let lang = 'fr';
