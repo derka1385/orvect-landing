@@ -47,8 +47,8 @@ p{margin:0}
 .brand{display:inline-flex;align-items:center;gap:9px;font-weight:700;font-size:22px;letter-spacing:-.04em;text-decoration:none;color:var(--on-dark);transition:opacity .4s}
 .brand img{width:28px;height:auto}
 .site-header nav{display:flex;gap:clamp(18px,2vw,28px);margin-left:auto;font-size:15px}
-.site-header nav a{text-decoration:none;white-space:nowrap;color:var(--on-dark-2);padding-block:6px;border-bottom:1px solid transparent;transition:color .2s,border-color .2s}
-.site-header nav a:hover{color:var(--on-dark);border-bottom-color:var(--on-dark-2)}
+.site-header nav>a,.nav-trigger{text-decoration:none;white-space:nowrap;color:var(--on-dark-2);padding-block:6px;border-bottom:1px solid transparent;transition:color .2s,border-color .2s}
+.site-header nav>a:hover,.nav-trigger:hover,.nav-item:hover>.nav-trigger,.nav-item.is-open>.nav-trigger{color:var(--on-dark);border-bottom-color:var(--on-dark-2)}
 .menu-toggle{display:none}
 .site-header .btn-ghost{border-color:var(--on-dark-2);color:var(--on-dark)}
 .site-header .btn-ghost:hover{background:var(--on-dark);color:var(--ink)}
@@ -57,6 +57,25 @@ p{margin:0}
 .demo-short{display:none}
 .site-header .bar>*{flex-shrink:0}
 .site-header .btn{white-space:nowrap}
+/* Mega menu: Produit and Entreprise open a light panel under the bar on hover, focus or click. */
+.site-header nav{align-items:center}
+.nav-trigger{display:inline-flex;align-items:center;gap:6px;background:none;border:0;border-bottom:1px solid transparent;font:inherit;cursor:pointer}
+.nav-trigger svg{width:14px;height:14px;fill:none;stroke:currentColor;stroke-width:1.6;transition:transform .25s var(--ease)}
+.nav-item:hover>.nav-trigger svg,.nav-item.is-open>.nav-trigger svg{transform:rotate(180deg)}
+.mega{position:absolute;left:var(--gutter);right:var(--gutter);top:100%;padding-top:10px;opacity:0;visibility:hidden;transform:translateY(-6px);transition:opacity .2s,transform .25s var(--ease),visibility 0s linear .25s;z-index:60}
+.nav-item:hover>.mega,.nav-item:focus-within>.mega,.nav-item.is-open>.mega{opacity:1;visibility:visible;transform:none;transition:opacity .2s,transform .25s var(--ease),visibility 0s}
+.nav-item.is-closed>.mega{opacity:0;visibility:hidden}
+.mega-inner{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(0,1fr);background:var(--paper);color:var(--ink);border:1px solid var(--line);border-radius:10px;box-shadow:0 24px 48px -20px #00000059;overflow:hidden}
+.mega-col{display:grid;align-content:start;gap:4px;padding:28px 24px}
+.mega-side{background:var(--paper-2)}
+.mega-k{margin:0 0 10px 12px;font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-2)}
+.mega-link{display:grid;grid-template-columns:22px 1fr;gap:14px;padding:12px;border-radius:6px;text-decoration:none;color:var(--ink);transition:background-color .15s}
+.mega-link:hover,.mega-link:focus-visible{background:#10121408}
+.mega-side .mega-link:hover{background:#ffffff8c}
+.mega-link svg{width:22px;height:22px;margin-top:1px;fill:none;stroke:var(--accent-ink);stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+.mega-link b{display:block;font-weight:600;font-size:16px;white-space:nowrap}
+.mega-link small{display:block;margin-top:3px;font-size:14px;line-height:1.4;color:var(--ink-2)}
+.mega-link[aria-current=page] b{color:var(--accent-ink)}
 @media(max-width:1320px){.site-header .bar>.btn-demo .demo-long{display:none}.site-header .bar>.btn-demo .demo-short{display:inline}}
 /* Language: a native select, codes only so it reads the same in every language */
 .lang-select{-webkit-appearance:none;appearance:none;height:36px;padding:0 28px 0 12px;border:1px solid var(--line-dark);border-radius:2px;background:transparent url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 6'%3E%3Cpath d='M1 1l4 4 4-4' fill='none' stroke='%23a9adb0' stroke-width='1.5'/%3E%3C/svg%3E") no-repeat right 10px center/10px 6px;color:var(--on-dark);font-family:inherit;font-size:14px;font-weight:600;letter-spacing:.04em;cursor:pointer;transition:border-color .2s}
@@ -116,7 +135,7 @@ figcaption{margin-top:12px;font-size:14px;color:var(--ink-2)}
 .cta-band h2 span{display:block;color:var(--accent)}
 .cta-band p{margin-top:20px;max-width:52ch;color:var(--on-dark-2)}
 .cta-band .actions{display:flex;flex-wrap:wrap;gap:12px}
-.site-header nav a[aria-current=page]{color:var(--on-dark);border-bottom-color:var(--accent)}
+.site-header nav>a[aria-current=page],.nav-item.is-current>.nav-trigger{color:var(--on-dark);border-bottom-color:var(--accent)}
 
 /* ---------- Footer ---------- */
 .site-footer{background:var(--ink);color:var(--on-dark);padding-block:48px}
@@ -145,9 +164,20 @@ figcaption{margin-top:12px;font-size:14px;color:var(--ink-2)}
   .site-header.is-open .brand{opacity:1}
   .site-header.is-open .bar{flex-wrap:wrap;padding-block:12px 20px;row-gap:12px}
   .site-header.is-open .bar>.brand{height:40px}
-  .site-header.is-open nav{display:flex;flex-direction:column;gap:0;width:100%;order:3;margin:0;font-size:18px}
-  .site-header.is-open nav a{padding:14px 0;border-bottom:1px solid var(--line-dark)}
+  .site-header.is-open nav{display:flex;flex-direction:column;align-items:stretch;gap:0;width:100%;order:3;margin:0;font-size:18px}
+  .site-header.is-open nav>a,.site-header.is-open .nav-trigger{width:100%;justify-content:space-between;padding:14px 0;font-size:18px;border-bottom:1px solid var(--line-dark)}
   .site-header.is-open .bar>.btn{display:inline-flex;order:4}
+  .site-header.is-open .nav-item{width:100%}
+  .site-header.is-open .mega{position:static;padding:0;opacity:1;visibility:visible;transform:none;display:none;transition:none}
+  .site-header.is-open .nav-item.is-open>.mega{display:block}
+  .site-header.is-open .mega-inner{grid-auto-flow:row;background:none;border:0;border-radius:0;box-shadow:none;color:var(--on-dark)}
+  .site-header.is-open .mega-col,.site-header.is-open .mega-side{padding:8px 0 12px;background:none}
+  .site-header.is-open .mega-k{margin-left:0;color:var(--on-dark-2)}
+  .site-header.is-open .mega-link{padding:10px 0;color:var(--on-dark)}
+  .site-header.is-open .mega-link small{display:none}
+  .site-header.is-open{max-height:100svh;overflow-y:auto;overscroll-behavior:contain;background:var(--ink)}
+  .site-header.is-open .mega-link svg{stroke:var(--accent)}
+  .site-header.is-open .mega-link b{white-space:normal}
   .site-header.is-open .bar>.btn{flex:1 1 100%;justify-content:center;margin-left:0}
   .site-header.is-open .bar>.btn-demo{order:5}
   .site-header.is-open .bar>.btn-demo .demo-long{display:inline}

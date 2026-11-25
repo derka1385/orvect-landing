@@ -10,7 +10,8 @@ if (header) {
     const y = scrollY, delta = y - lastY;
     if (y < 60 || header.classList.contains('is-open')) { header.classList.remove('is-floating'); lastY = y; return; }
     if (Math.abs(delta) < 8) return;
-    header.classList.toggle('is-floating', delta > 0);
+    // ponytail: floating bar switched off for now (2026-11); restore the toggle below to bring it back.
+    // header.classList.toggle('is-floating', delta > 0);
     lastY = y;
   };
   addEventListener('scroll', () => { if (!frame) frame = requestAnimationFrame(update); }, {passive:true});
@@ -21,6 +22,22 @@ if (header) {
   toggle?.addEventListener('click', () => setOpen(!header.classList.contains('is-open')));
   header.querySelectorAll('nav a').forEach(a => a.addEventListener('click', () => setOpen(false)));
   addEventListener('keydown', e => { if (e.key === 'Escape') setOpen(false); });
+
+  // Mega menu: hover opens it on desktop (CSS); a click or tap toggles it, Escape and a click elsewhere close it.
+  const items = [...header.querySelectorAll('[data-mega]')];
+  const show = (item, open) => {
+    item.classList.toggle('is-open', open);
+    item.querySelector('.nav-trigger').setAttribute('aria-expanded', String(open));
+  };
+  items.forEach(item => {
+    item.querySelector('.nav-trigger').addEventListener('click', () => {
+      const open = !item.classList.contains('is-open');
+      items.forEach(other => show(other, other === item && open));
+    });
+    item.addEventListener('mouseleave', () => { if (!header.classList.contains('is-open')) show(item, false); });
+  });
+  addEventListener('keydown', e => { if (e.key === 'Escape') items.forEach(item => show(item, false)); });
+  addEventListener('click', e => { if (!header.contains(e.target)) items.forEach(item => show(item, false)); });
 }
 
 // Counter: API-tracked diagnostics + those recorded outside tracking; counts up once when it comes into view.
